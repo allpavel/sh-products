@@ -4,55 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo,
-.headerAward {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  margin-top: 35px;
-  margin-bottom: 35px;
-}
-
-.logoImage {
-  margin-right: 6px;
-}
-
-.awardImage {
-  margin-right: 13px;
-}
-
-.headerAward {
-  margin-top: 45px;
-  margin-bottom: 45px;
   letter-spacing: 0.16px;
   font-size: 16px;
-}
-
-.awardText {
-  max-width: 160px;
-}
-
-.contacts {
-  display: flex;
-  align-items: center;
-}
-
-.contactsIcon {
-  margin-right: 12px;
-}
-
-.whatsAppIcon {
-  color: var(--tertiary);
-  width: 22px;
-  height: 22px;
-}
-
-.mailIcon {
-  width: 22px;
-  height: 17px;
-  color: var(--primary);
 }
