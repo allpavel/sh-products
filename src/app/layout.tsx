@@ -1,5 +1,5 @@
 import { Header } from "./components/Header/Header";
-import { Inter, Montserrat } from "next/font/google";
+import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 
 export const montserrat = Montserrat({
@@ -7,10 +7,15 @@ export const montserrat = Montserrat({
   subsets: ["cyrillic"],
 });
 
+const inter = Inter({
+  display: "swap",
+  subsets: ["cyrillic"],
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru">
-      <body>
+      <body className={inter.className}>
         <Header />
         {children}
       </body>

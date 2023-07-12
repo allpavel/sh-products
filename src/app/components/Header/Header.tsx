@@ -1,13 +1,11 @@
-import { montserrat } from "@/app/layout";
-import { Button } from "../Button/Button";
-import styles from "./Header.module.css";
 import { HeaderTop } from "../HeaderTop/HeaderTop";
+import { HeaderNav } from "../HeaderNav/HeaderNav";
 
 export const Header = () => {
   return (
-    <header className={`${styles.container} ${montserrat.className}`}>
+    <header>
       <HeaderTop />
-      <Button text="Заказать звонок" type="red" />
+      <HeaderNav />
     </header>
   );
 };

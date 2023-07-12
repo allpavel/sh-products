@@ -1,0 +1,95 @@
+.nav {
+  background-color: var(--primary);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.navLinks {
+  height: 65px;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  font-style: 20px;
+  letter-spacing: 0.2px;
+  padding: 20px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  height: 1px;
+  width: 0;
+  opacity: 0;
+  left: 50%;
+  bottom: 17px;
+  transform: translateX(-50%);
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.link:hover {
+  color: var(--link-hover);
+}
+
+.link:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+}
+
+.link svg {
+  font-size: 20px;
+}
+
+.dropDownContainer {
+  position: relative;
+}
+
+.dropDownContent {
+  visibility: hidden;
+  background-color: var(--primary);
+  border: 1px solid #000;
+  list-style: none;
+  position: absolute;
+  width: 290px;
+  right: 0;
+  opacity: 0;
+  transition:
+    opacity 0.3s linear,
+    visibility 0.3s linear;
+}
+
+.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropDownContent .link {
+  margin-left: 10px;
+  padding: 10px 0;
+  display: inline-block;
+}
+
+.dropDownContent .link::after {
+  bottom: 10px;
+}

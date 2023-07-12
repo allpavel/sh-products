@@ -2,6 +2,8 @@
   --primary: #2f7b80;
   --secondary: #e10b20;
   --tertiary: #1faf38;
+
+  --link-hover: #e3e3e3;
 }
 
 * {

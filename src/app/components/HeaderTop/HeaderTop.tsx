@@ -1,15 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import { RiWhatsappFill } from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
+import { Button } from "../Button/Button";
+import { montserrat } from "@/app/layout";
 import logo from "../../../../public/images/logo.jpg";
 import angars from "../../../../public/images/angars.jpg";
 import award from "../../../../public/images/award.jpg";
-import { RiWhatsappFill } from "react-icons/ri";
-import { MdEmail } from "react-icons/md";
 import styles from "./HeaderTop.module.css";
 
 export const HeaderTop = () => {
   return (
-    <>
+    <div className={`${styles.container} ${montserrat.className}`}>
       <div className={styles.logo}>
         <Link href="/">
           <Image src={logo} alt="Логотип Агро-Тех" width={106} height={67} className={styles.logoImage} />
@@ -40,6 +42,7 @@ export const HeaderTop = () => {
           8-921-987-65-43
         </a>
       </div>
-    </>
+      <Button text="Заказать звонок" type="red" />
+    </div>
   );
 };
