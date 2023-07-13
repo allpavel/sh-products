@@ -21,7 +21,6 @@
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
-  font-style: 20px;
   letter-spacing: 0.2px;
   padding: 20px 0;
   position: relative;
@@ -92,4 +91,120 @@
 
 .dropDownContent .link::after {
   bottom: 10px;
+}
+
+.contactsMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 65px;
+  }
+
+  .navLinks {
+    background-color: var(--primary);
+    height: calc(100vh - 172px);
+    gap: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 0 27px 27px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    transition:
+      height 0.3s linear,
+      opacity 0.3s linear,
+      visibility 0.3s linear;
+  }
+
+  .navLinks li {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+  }
+
+  .link {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .backArrow {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .link::after {
+    display: none;
+  }
+
+  .closeContacts {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .contactsMenu {
+    cursor: pointer;
+    display: inline-block;
+    color: var(--secondary);
+  }
+
+  .contactsMenu svg {
+    width: 30px;
+    height: 30px;
+  }
+  .dropDownContainer {
+    position: static;
+  }
+
+  .dropDownContent {
+    padding: 0 27px;
+    visibility: hidden;
+    background-color: var(--primary);
+    border: 1px solid #000;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    overflow-y: scroll;
+    opacity: 0;
+    transition:
+      opacity 0.3s linear,
+      visibility 0.3s linear;
+  }
+
+  .dropDownContent li {
+    padding: 10px 0;
+  }
+
+  .open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+  .navLinks {
+    overflow-y: scroll;
+  }
+
+  .dropDownContent {
+    top: 150px;
+  }
 }

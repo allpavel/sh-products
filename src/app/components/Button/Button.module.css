@@ -16,3 +16,15 @@
 .green {
   background-color: var(--primary);
 }
+
+@media (max-width: 1200px) {
+  .callToAction {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .callToAction {
+    padding: 12px 20px;
+  }
+}

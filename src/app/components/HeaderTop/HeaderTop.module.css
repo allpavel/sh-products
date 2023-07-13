@@ -1,10 +1,11 @@
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 35px 12px;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  gap: 20px;
   align-items: center;
   letter-spacing: 0.16px;
   font-size: 16px;
@@ -17,8 +18,7 @@
 }
 
 .logo {
-  margin-top: 35px;
-  margin-bottom: 35px;
+  flex-wrap: nowrap;
 }
 
 .logoImage {
@@ -29,13 +29,15 @@
   margin-right: 13px;
 }
 
-.headerAward {
-  margin-top: 45px;
-  margin-bottom: 45px;
-}
-
 .awardText {
   max-width: 160px;
+}
+
+.contactsContainer {
+  flex: 0 1 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .contacts {
@@ -68,4 +70,72 @@
 .phone {
   display: block;
   font-weight: 700;
+}
+
+.contactsMenu {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    font-size: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 0;
+  }
+
+  .angars {
+    display: none;
+  }
+
+  .contactsContainer {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+  }
+
+  .contactsContainer {
+    gap: 10px;
+    position: absolute;
+    right: 0;
+    bottom: -180%;
+    flex-direction: column;
+    align-items: start;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px 27px 27px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    transition:
+      transform 0.3s linear,
+      opacity 0.3s linear,
+      visibility 0.3s linear;
+  }
+
+  .closeContacts {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .contactsMenu {
+    cursor: pointer;
+    display: inline-block;
+    color: var(--secondary);
+  }
+
+  .contactsMenu svg {
+    width: 30px;
+    height: 30px;
+  }
 }
