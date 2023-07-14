@@ -6,7 +6,7 @@
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 35px 12px;
+  padding: 35px 12px 0;
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
@@ -155,9 +155,8 @@
 @media (max-width: 660px) {
   .wrapper {
     grid-template-columns: 300px;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
-    padding-bottom: 14px;
   }
 
   .contactsWrapper {
@@ -166,5 +165,13 @@
 
   .navLinks {
     align-items: start;
+  }
+
+  .navLinks li {
+    margin-bottom: 10px;
+  }
+
+  .link {
+    padding-left: 0;
   }
 }
