@@ -155,7 +155,7 @@
 @media (max-width: 660px) {
   .wrapper {
     grid-template-columns: 300px;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
   }
 
@@ -165,5 +165,13 @@
 
   .navLinks {
     align-items: start;
+  }
+
+  .navLinks li {
+    margin-bottom: 10px;
+  }
+
+  .link {
+    padding-left: 0;
   }
 }
