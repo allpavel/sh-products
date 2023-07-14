@@ -1,0 +1,156 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 35px 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  letter-spacing: 0.16px;
+  font-size: 16px;
+}
+
+.logo,
+.headerAward {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  flex-wrap: nowrap;
+}
+
+.logoImage {
+  margin-right: 6px;
+}
+
+.awardImage {
+  margin-right: 13px;
+}
+
+.awardText {
+  max-width: 160px;
+}
+
+.contactsContainer {
+  flex: 0 1 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+}
+
+.contactsIcon {
+  margin-right: 12px;
+}
+
+.whatsAppIcon {
+  color: var(--tertiary);
+  width: 22px;
+  height: 22px;
+}
+
+.mailIcon {
+  color: var(--primary);
+  width: 22px;
+  height: 22px;
+}
+
+.mailLink,
+.phone {
+  text-decoration: none;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.phoneContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone {
+  flex-shrink: 0;
+  display: block;
+  font-weight: 700;
+}
+
+.contactsMenu {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    font-size: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 0;
+  }
+
+  .awardText {
+    max-width: 120px;
+  }
+
+  .angars {
+    display: none;
+  }
+
+  .contactsContainer {
+    flex-grow: 1;
+  }
+
+  .contactsIcon {
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+  }
+
+  .contactsContainer {
+    gap: 10px;
+    position: absolute;
+    right: 0;
+    bottom: -180%;
+    flex-direction: column;
+    align-items: start;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px 27px 27px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    transition:
+      transform 0.3s linear,
+      opacity 0.3s linear,
+      visibility 0.3s linear;
+  }
+
+  .closeContacts {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .contactsMenu {
+    cursor: pointer;
+    display: inline-block;
+    color: var(--secondary);
+  }
+
+  .contactsMenu svg {
+    width: 30px;
+    height: 30px;
+  }
+}
