@@ -2,7 +2,6 @@
   background-image: url("../../../../public/images/hero-angar.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 600px;
 }
 
 .wrapper {
@@ -91,4 +90,75 @@
   border: none;
   margin: 10px 0;
   font-size: 14px;
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 30px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+    line-height: normal;
+    text-align: center;
+  }
+  .desc {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .list li {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+
+  .formInputs {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    padding: 18px 12px;
+  }
+  .title {
+    font-size: 20px;
+    line-height: normal;
+    text-align: center;
+  }
+  .desc {
+    font-size: 16px;
+    text-align: center;
+    margin: 12px 0;
+  }
+
+  .list {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .list li {
+    font-size: 16px;
+    padding-left: 15px;
+    line-height: 20px;
+  }
+  .list li::before {
+    top: 7px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+  }
+  .formInputs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
