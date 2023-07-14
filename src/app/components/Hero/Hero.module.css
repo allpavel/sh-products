@@ -1,0 +1,94 @@
+.container {
+  background-image: url("../../../../public/images/hero-angar.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 115px 12px;
+}
+
+.content {
+  color: #fff;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 38px;
+  line-height: 58px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.desc {
+  font-size: 24px;
+  margin: 24px 0;
+}
+
+.list {
+  list-style: none;
+  margin-top: 29px;
+  margin-bottom: 29px;
+}
+
+.list li {
+  font-size: 24px;
+  padding-left: 30px;
+  position: relative;
+  line-height: 29px;
+}
+
+.list li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: #2f7b80;
+  border-radius: 50%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+.label {
+  color: #fff;
+}
+
+.asterisk {
+  color: var(--secondary);
+}
+
+.formInputs {
+  display: flex;
+  gap: 18px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.buttons button {
+  font-size: 14px;
+  padding: 14px 22px;
+  margin-bottom: 0;
+}
+
+.phoneInput {
+  padding: 12px 18px;
+  border-radius: 5px;
+  border: none;
+  margin: 10px 0;
+  font-size: 14px;
+}
