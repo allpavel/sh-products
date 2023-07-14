@@ -65,9 +65,16 @@
 .phone {
   text-decoration: none;
   color: #000;
+  flex-shrink: 0;
+}
+
+.phoneContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .phone {
+  flex-shrink: 0;
   display: block;
   font-weight: 700;
 }
@@ -90,12 +97,20 @@
     gap: 0;
   }
 
+  .awardText {
+    max-width: 120px;
+  }
+
   .angars {
     display: none;
   }
 
   .contactsContainer {
     flex-grow: 1;
+  }
+
+  .contactsIcon {
+    margin-right: 6px;
   }
 }
 

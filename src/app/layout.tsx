@@ -1,5 +1,6 @@
-import { Header } from "./components/Header/Header";
 import { Montserrat, Inter } from "next/font/google";
+import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
 import "./globals.css";
 
 export const montserrat = Montserrat({
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Header />
         <main>{children}</main>
-        <footer>hello</footer>
+        <Footer />
       </body>
     </html>
   );

@@ -1,5 +1,9 @@
 .callToAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 24px 41px;
+  margin-bottom: 14px;
   color: #fff;
   font-size: 20px;
   letter-spacing: 0.2px;
@@ -17,14 +21,13 @@
   background-color: var(--primary);
 }
 
-@media (max-width: 1200px) {
-  .callToAction {
-    font-size: 12px;
-  }
+.text {
+  margin-right: 10px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1040px) {
   .callToAction {
+    font-size: 16px;
     padding: 12px 20px;
   }
 }

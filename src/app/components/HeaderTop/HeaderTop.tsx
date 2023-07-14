@@ -68,7 +68,7 @@ export const HeaderTop = () => {
             </a>
           </div>
         </div>
-        <div>
+        <div className={styles.phoneContainer}>
           <a href="tel:8-911-124-25-67" className={styles.phone}>
             8-911-124-25-67
           </a>

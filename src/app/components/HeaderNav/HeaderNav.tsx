@@ -54,8 +54,10 @@ export const HeaderNav = () => {
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.container} onClick={handleOpenMobileMenu}>
-        <div className={styles.contactsMenu}>{isMobileOpen ? <MdClose /> : <MdMenu />}</div>
+      <div className={styles.container}>
+        <div className={styles.contactsMenu} onClick={handleOpenMobileMenu}>
+          {isMobileOpen ? <MdClose /> : <MdMenu />}
+        </div>
         <ul className={`${styles.navLinks} ${isMobileOpen ? "" : styles.closeContacts}`} ref={mobileMenuRef}>
           <li>
             <Link href="#" className={styles.link}>
