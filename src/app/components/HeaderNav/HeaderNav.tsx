@@ -42,6 +42,7 @@ export const HeaderNav = () => {
       if (mobileMenuRef.current && isMobileOpen && !mobileMenuRef.current.contains(event.target as Node)) {
         setIsMobileOpen(false);
         setIsDropdownOpen(false);
+        document.body.style.overflow = "";
       }
     };
 
