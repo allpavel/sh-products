@@ -76,12 +76,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-}
-
-.buttons button {
   font-size: 14px;
-  padding: 14px 22px;
-  margin-bottom: 0;
 }
 
 .phoneInput {

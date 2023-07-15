@@ -148,8 +148,10 @@ export const Footer = () => {
               placeholder="+7 ( ___ ) ___ - __ - __ "
               className={styles.phoneInput}
             />
-            <Button text="Отправить" type="red" icon="telegram" />
-            <Button text="8-912-345-67-89" type="red" />
+            <div className={styles.buttonGroup}>
+              <Button text="Отправить" type="red" icon="telegram" size="large" />
+              <Button text="8-912-345-67-89" type="red" size="large" />
+            </div>
           </form>
         </div>
       </div>
