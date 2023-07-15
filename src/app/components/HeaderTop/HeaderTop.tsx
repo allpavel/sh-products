@@ -76,7 +76,7 @@ export const HeaderTop = () => {
             8-921-987-65-43
           </a>
         </div>
-        <Button text="Заказать звонок" type="red" />
+        <Button text="Заказать звонок" type="red" size="large" />
       </div>
     </div>
   );

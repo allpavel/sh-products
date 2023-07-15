@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 41px;
-  margin-bottom: 14px;
+
   color: #fff;
   font-size: 20px;
   letter-spacing: 0.2px;
@@ -23,6 +22,25 @@
 
 .text {
   margin-right: 10px;
+}
+
+.outlineGreen {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+}
+
+.outlineRed {
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+}
+
+.large {
+  padding: 24px 41px;
+}
+
+.medium {
+  font-size: 14px;
+  padding: 14px 22px;
 }
 
 @media (max-width: 1040px) {

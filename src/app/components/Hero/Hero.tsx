@@ -27,8 +27,8 @@ export const Hero = () => {
                 className={styles.phoneInput}
               />
               <div className={styles.buttons}>
-                <Button text="Отправить" type="red" icon="telegram" />
-                <Button text="8-912-345-67-89" type="green" />
+                <Button text="Отправить" type="red" icon="telegram" size="medium" />
+                <Button text="8-912-345-67-89" type="green" size="medium" />
               </div>
             </div>
           </form>

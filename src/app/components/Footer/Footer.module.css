@@ -139,6 +139,12 @@
   font-size: 18px;
 }
 
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 @media (max-width: 1040px) {
   .wrapper {
     grid-template-columns: 300px 300px;
