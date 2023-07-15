@@ -25,11 +25,21 @@
 }
 
 .outlineGreen {
+  color: #000;
   background-color: transparent;
   border: 1px solid var(--primary);
+  transition:
+    color 0.3s linear,
+    background-color 0.3s linear;
+}
+
+.outlineGreen:hover {
+  background-color: var(--primary);
+  color: #fff;
 }
 
 .outlineRed {
+  color: #000;
   background-color: transparent;
   border: 1px solid var(--secondary);
 }

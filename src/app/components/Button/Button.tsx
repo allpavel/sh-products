@@ -19,7 +19,7 @@ const icons: Icons = {
 export const Button = ({ text, type, size, icon }: Props) => {
   return (
     <button className={`${styles[type]} ${styles[size]} ${styles.callToAction}`}>
-      <span className={styles.text}>{text}</span>
+      <span className={`${icon ? styles.text : ""}`}>{text}</span>
       {icon ? icons[icon]() : ""}
     </button>
   );
