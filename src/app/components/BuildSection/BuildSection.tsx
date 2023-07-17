@@ -6,6 +6,7 @@ import { TbAirConditioning, TbWall } from "react-icons/tb";
 import { Button } from "../Button/Button";
 import angar1 from "../../../../public/images/build-angar1.jpg";
 import angar2 from "../../../../public/images/build-angar2.jpg";
+import angar3 from "../../../../public/images/build-angar3.jpg";
 import styles from "./BuildSection.module.css";
 
 export const BuildSection = () => {
@@ -180,7 +181,55 @@ export const BuildSection = () => {
               </div>
             </div>
           </article>
-          <article></article>
+          <article className={styles.content}>
+            <div>
+              <Image src={angar3} alt="Три белый ангара в поле" />
+            </div>
+            <div>
+              <div>
+                <h2 className={styles.title}>Тентовые ангары</h2>
+              </div>
+              <div className={styles.icons}>
+                <div className={styles.iconWrapper}>
+                  <MdOutlineConstruction className={styles.icon} />
+                  От 12 метров до 14 метров
+                </div>
+              </div>
+              <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
+              <form className={styles.form}>
+                <p className={styles.callToAction}>Получить расчёт:</p>
+                <label htmlFor="tel">
+                  Ваш телефон <span className={styles.asterisk}>*</span>
+                </label>
+                <div className={styles.inputWrapper}>
+                  <input
+                    type="tel"
+                    id="tel"
+                    name="phone"
+                    placeholder="+7 ( ___ ) ___ - __ - __ "
+                    className={styles.phoneInput}
+                  />
+                  <div className={styles.buttons}>
+                    <Button text="Отправить" type="red" icon="telegram" size="medium" />
+                    <Button text="8-912-345-67-89" type="green" size="medium" />
+                  </div>
+                </div>
+              </form>
+              <div>
+                <p className={styles.listTitle}>Тентовые ангары – наиболее оптимальный вариант строительства, если:</p>
+                <ul className={styles.list}>
+                  <li>Вам нужно выставочное помещение</li>
+                  <li>Вам нужна временная и мобильная постройка</li>
+                  <li>Вас ограниченный бюджет и поджимают сроки</li>
+                  <li>Нужна постройка на охраняемой территории</li>
+                  <li>
+                    Материал тента максимально устойчив к воздействиям окружающей среды, в т.ч., солнечного излучения,
+                    морозов, сильных ветров и осадков
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
           <article></article>
           <article></article>
         </div>
