@@ -14,15 +14,14 @@
   margin-bottom: 16px;
 }
 
-.activeTab {
-  background-color: var(--primary);
-  color: #000;
-}
-
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+
+.dBlock {
+  display: none;
 }
 
 .title {

@@ -53,6 +53,11 @@
   padding: 14px 22px;
 }
 
+.outlineGreen.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
 @media (max-width: 1040px) {
   .callToAction {
     font-size: 16px;
