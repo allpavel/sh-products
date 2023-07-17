@@ -7,6 +7,7 @@ import { Button } from "../Button/Button";
 import angar1 from "../../../../public/images/build-angar1.jpg";
 import angar2 from "../../../../public/images/build-angar2.jpg";
 import angar3 from "../../../../public/images/build-angar3.jpg";
+import angar4 from "../../../../public/images/build-angar4.jpg";
 import styles from "./BuildSection.module.css";
 
 export const BuildSection = () => {
@@ -230,7 +231,46 @@ export const BuildSection = () => {
               </div>
             </div>
           </article>
-          <article></article>
+          <article className={styles.content}>
+            <div>
+              <Image src={angar4} alt="Три белый ангара в поле" />
+            </div>
+            <div>
+              <div>
+                <h2 className={styles.title}>Изготовление металлоконструкций</h2>
+              </div>
+              <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
+              <form className={styles.form}>
+                <p className={styles.callToAction}>Получить расчёт:</p>
+                <label htmlFor="tel">
+                  Ваш телефон <span className={styles.asterisk}>*</span>
+                </label>
+                <div className={styles.inputWrapper}>
+                  <input
+                    type="tel"
+                    id="tel"
+                    name="phone"
+                    placeholder="+7 ( ___ ) ___ - __ - __ "
+                    className={styles.phoneInput}
+                  />
+                  <div className={styles.buttons}>
+                    <Button text="Отправить" type="red" icon="telegram" size="medium" />
+                    <Button text="8-912-345-67-89" type="green" size="medium" />
+                  </div>
+                </div>
+              </form>
+              <div>
+                <p className={styles.listTitle}>Широкий спектр производственных услуг по изготовлению деталей:</p>
+                <ul className={styles.list}>
+                  <li>Гибка листового металла</li>
+                  <li>Порошковая покраска в любой цвет</li>
+                  <li>Раскрой листового металла</li>
+                  <li>Слесарные, сборочные и сварочные работы</li>
+                  <li>Токарные работы по чертежам</li>
+                </ul>
+              </div>
+            </div>
+          </article>
           <article></article>
         </div>
       </div>
