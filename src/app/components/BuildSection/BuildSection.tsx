@@ -8,6 +8,7 @@ import angar1 from "../../../../public/images/build-angar1.jpg";
 import angar2 from "../../../../public/images/build-angar2.jpg";
 import angar3 from "../../../../public/images/build-angar3.jpg";
 import angar4 from "../../../../public/images/build-angar4.jpg";
+import angar5 from "../../../../public/images/build-angar5.jpg";
 import styles from "./BuildSection.module.css";
 
 export const BuildSection = () => {
@@ -233,7 +234,7 @@ export const BuildSection = () => {
           </article>
           <article className={styles.content}>
             <div>
-              <Image src={angar4} alt="Три белый ангара в поле" />
+              <Image src={angar4} alt="Гибка листового металла" />
             </div>
             <div>
               <div>
@@ -271,7 +272,48 @@ export const BuildSection = () => {
               </div>
             </div>
           </article>
-          <article></article>
+          <article className={styles.content}>
+            <div>
+              <Image src={angar5} alt="Кран строит крышу ангара" />
+            </div>
+            <div>
+              <div>
+                <h2 className={styles.title}>Ремонт и реконструкция ангаров</h2>
+              </div>
+              <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
+              <form className={styles.form}>
+                <p className={styles.callToAction}>Получить расчёт:</p>
+                <label htmlFor="tel">
+                  Ваш телефон <span className={styles.asterisk}>*</span>
+                </label>
+                <div className={styles.inputWrapper}>
+                  <input
+                    type="tel"
+                    id="tel"
+                    name="phone"
+                    placeholder="+7 ( ___ ) ___ - __ - __ "
+                    className={styles.phoneInput}
+                  />
+                  <div className={styles.buttons}>
+                    <Button text="Отправить" type="red" icon="telegram" size="medium" />
+                    <Button text="8-912-345-67-89" type="green" size="medium" />
+                  </div>
+                </div>
+              </form>
+              <div>
+                <p className={styles.listTitle}>
+                  В зависимости от назначения сооружения, могут быть выполнены следующие виды работ:
+                </p>
+                <ul className={styles.list}>
+                  <li>Установка естественного освещения</li>
+                  <li>Монтаж естественной системы вентиляции вентиляции</li>
+                  <li>Монтаж приточной и принудительной систем вентиляции</li>
+                  <li>Утепление сооружения</li>
+                  <li>Какие-либо другие виды работ, требуемые Заказчиком</li>
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
