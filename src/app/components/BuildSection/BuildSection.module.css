@@ -5,6 +5,7 @@
 
 .wrapper {
   padding: 20px 12px;
+  margin-bottom: 30px;
 }
 
 .buttonGroup {
@@ -18,7 +19,10 @@
   display: flex;
   justify-content: center;
   gap: 30px;
-  min-height: 686px;
+}
+
+.productContent {
+  min-height: 400px;
 }
 
 .dBlock {
