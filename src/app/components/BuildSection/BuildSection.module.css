@@ -16,6 +16,7 @@
 
 .content {
   display: flex;
+  justify-content: center;
   gap: 30px;
   min-height: 686px;
 }
@@ -28,6 +29,16 @@
   font-size: 30px;
   margin-top: 12px;
   margin-bottom: 12px;
+}
+
+.image {
+  flex-basis: 600px;
+  max-width: 600px;
+  max-height: 400px;
+}
+
+.desc {
+  flex-basis: 600px;
 }
 
 .links {
@@ -167,6 +178,7 @@
 
   .image {
     margin: 0 auto;
+    flex-basis: auto;
   }
 
   .icons {

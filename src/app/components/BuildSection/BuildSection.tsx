@@ -61,7 +61,7 @@ export const BuildSection = () => {
           <div className={styles.image}>
             <Image src={angar1} alt="Ангар для содержания свиней" className={styles.image} />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Ангары бескаркасные</h2>
             </div>
@@ -141,9 +141,9 @@ export const BuildSection = () => {
         </article>
         <article className={`${styles.content} ${activeTab === "carcass" ? "" : styles.dBlock}`}>
           <div className={styles.image}>
-            <Image src={angar2} alt="Каркасный ангар" />
+            <Image src={angar2} alt="Каркасный ангар" className={styles.image} />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Каркасные ангары</h2>
             </div>
@@ -221,7 +221,7 @@ export const BuildSection = () => {
           <div className={styles.image}>
             <Image src={angar3} alt="Три белый ангара в поле" className={styles.image} />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Тентовые ангары</h2>
             </div>
@@ -270,7 +270,7 @@ export const BuildSection = () => {
           <div className={styles.image}>
             <Image src={angar4} alt="Гибка листового металла" className={styles.image} />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Изготовление металлоконструкций</h2>
             </div>
@@ -310,7 +310,7 @@ export const BuildSection = () => {
           <div className={styles.image}>
             <Image src={angar5} alt="Кран строит крышу ангара" className={styles.image} />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Ремонт и реконструкция ангаров</h2>
             </div>
