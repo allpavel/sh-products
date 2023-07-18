@@ -55,9 +55,9 @@ export const ProductSection = () => {
         </div>
         <article className={`${styles.content} ${activeTab === "boroni" ? "" : styles.dBlock}`}>
           <div className={styles.image}>
-            <Image src={angar1} width={600} height={400} alt="Зеленые бороны на поле" className={styles.image} />
+            <Image src={angar1} width={598} height={400} alt="Зеленые бороны на поле" className={styles.image} />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Бороны</h2>
             </div>
@@ -102,7 +102,7 @@ export const ProductSection = () => {
               className={styles.image}
             />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Опрыскиватели</h2>
             </div>
@@ -140,7 +140,7 @@ export const ProductSection = () => {
           <div className={styles.image}>
             <Image src={angar3} width={600} height={400} alt="Разбрасыватель синего цвета" className={styles.image} />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Разбрасыватели удобрений</h2>
             </div>
@@ -181,7 +181,7 @@ export const ProductSection = () => {
           <div className={styles.image}>
             <Image src={angar4} alt="Синий трактор на зелёном поле" width={600} height={400} className={styles.image} />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Прочая сельхозтехника</h2>
             </div>
@@ -227,7 +227,7 @@ export const ProductSection = () => {
               className={styles.image}
             />
           </div>
-          <div>
+          <div className={styles.desc}>
             <div>
               <h2 className={styles.title}>Запчасти и комплектующие</h2>
             </div>

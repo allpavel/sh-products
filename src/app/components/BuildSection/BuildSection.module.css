@@ -31,8 +31,13 @@
 }
 
 .image {
+  flex-basis: 598px;
   max-width: 600px;
   max-height: 400px;
+}
+
+.desc {
+  flex-basis: 598px;
 }
 
 .links {
@@ -172,6 +177,7 @@
 
   .image {
     margin: 0 auto;
+    flex-basis: auto;
   }
 
   .icons {
