@@ -16,6 +16,7 @@
 
 .content {
   display: flex;
+  justify-content: center;
   gap: 30px;
   min-height: 686px;
 }
@@ -31,13 +32,13 @@
 }
 
 .image {
-  flex-basis: 598px;
+  flex-basis: 600px;
   max-width: 600px;
   max-height: 400px;
 }
 
 .desc {
-  flex-basis: 598px;
+  flex-basis: 600px;
 }
 
 .links {
