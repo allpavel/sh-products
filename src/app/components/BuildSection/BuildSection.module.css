@@ -15,9 +15,9 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 30px;
+  min-height: 686px;
 }
 
 .dBlock {
@@ -31,10 +31,14 @@
 }
 
 .links {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  justify-content: space-between;
   margin-top: 12px;
   margin-bottom: 30px;
+}
+
+.linksBlock {
+  flex-basis: 300px;
 }
 
 .link {
@@ -112,4 +116,98 @@
 
 .list {
   padding-left: 20px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1280px) {
+  .content {
+    gap: 16px;
+  }
+  .buttonGroup {
+    overflow-x: scroll;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .linksBlock {
+    flex-basis: auto;
+  }
+
+  .link {
+    margin-bottom: 7px;
+  }
+
+  .icons {
+    flex-direction: column;
+    justify-content: start;
+    gap: 14px;
+  }
+
+  .iconWrapper {
+    flex-basis: auto;
+  }
+
+  .inputWrapper {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .image {
+    margin: 0 auto;
+  }
+
+  .icons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .iconWrapper {
+    flex-basis: 150px;
+  }
+
+  .title {
+    margin-bottom: 0;
+  }
+
+  .links {
+    margin-top: 0;
+  }
+
+  .listTitle {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+
+  .inputWrapper {
+    gap: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .links {
+    margin-bottom: 16px;
+  }
+
+  .icons {
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 16px;
+  }
+
+  .iconWrapper {
+    flex-basis: auto;
+  }
 }

@@ -57,17 +57,16 @@ export const BuildSection = () => {
             active={activeTab === "metal"}
           />
         </div>
-
         <article className={`${styles.content} ${activeTab === "frameless" ? "" : styles.dBlock}`}>
-          <div>
-            <Image src={angar1} alt="Ангар для содержания свиней" />
+          <div className={styles.image}>
+            <Image src={angar1} alt="Ангар для содержания свиней" className={styles.image} />
           </div>
           <div>
             <div>
               <h2 className={styles.title}>Ангары бескаркасные</h2>
             </div>
             <div className={styles.links}>
-              <div>
+              <div className={styles.linksBlock}>
                 <Link href="#" className={styles.link}>
                   Бескаркасные ангары-свинарники
                 </Link>
@@ -81,7 +80,7 @@ export const BuildSection = () => {
                   Производственные бескаркасные сооружения
                 </Link>
               </div>
-              <div>
+              <div className={styles.linksBlock}>
                 <Link href="#" className={styles.link}>
                   Бескаркасные навесы
                 </Link>
@@ -141,7 +140,7 @@ export const BuildSection = () => {
           </div>
         </article>
         <article className={`${styles.content} ${activeTab === "carcass" ? "" : styles.dBlock}`}>
-          <div>
+          <div className={styles.image}>
             <Image src={angar2} alt="Каркасный ангар" />
           </div>
           <div>
@@ -149,7 +148,7 @@ export const BuildSection = () => {
               <h2 className={styles.title}>Каркасные ангары</h2>
             </div>
             <div className={styles.links}>
-              <div>
+              <div className={styles.linksBlock}>
                 <Link href="#" className={styles.link}>
                   Каркасные ангары
                 </Link>
@@ -160,7 +159,7 @@ export const BuildSection = () => {
                   Прямостенные ангары
                 </Link>
               </div>
-              <div>
+              <div className={styles.linksBlock}>
                 <Link href="#" className={styles.link}>
                   Автомойки и автосервисы
                 </Link>
@@ -219,8 +218,8 @@ export const BuildSection = () => {
           </div>
         </article>
         <article className={`${styles.content} ${activeTab === "tent" ? "" : styles.dBlock}`}>
-          <div>
-            <Image src={angar3} alt="Три белый ангара в поле" />
+          <div className={styles.image}>
+            <Image src={angar3} alt="Три белый ангара в поле" className={styles.image} />
           </div>
           <div>
             <div>
@@ -268,8 +267,8 @@ export const BuildSection = () => {
           </div>
         </article>
         <article className={`${styles.content} ${activeTab === "repair" ? "" : styles.dBlock}`}>
-          <div>
-            <Image src={angar4} alt="Гибка листового металла" />
+          <div className={styles.image}>
+            <Image src={angar4} alt="Гибка листового металла" className={styles.image} />
           </div>
           <div>
             <div>
@@ -308,8 +307,8 @@ export const BuildSection = () => {
           </div>
         </article>
         <article className={`${styles.content} ${activeTab === "metal" ? "" : styles.dBlock}`}>
-          <div>
-            <Image src={angar5} alt="Кран строит крышу ангара" />
+          <div className={styles.image}>
+            <Image src={angar5} alt="Кран строит крышу ангара" className={styles.image} />
           </div>
           <div>
             <div>
