@@ -53,7 +53,9 @@ export const ProductSection = () => {
             active={activeTab === "accessories"}
           />
         </div>
-        <article className={`${styles.content} ${activeTab === "boroni" ? "" : styles.dBlock}`}>
+        <article
+          className={`${styles.content} ${styles.productContent} ${activeTab === "boroni" ? "" : styles.dBlock}`}
+        >
           <div className={styles.image}>
             <Image src={angar1} width={598} height={400} alt="Зеленые бороны на поле" className={styles.image} />
           </div>
@@ -92,7 +94,9 @@ export const ProductSection = () => {
             </div>
           </div>
         </article>
-        <article className={`${styles.content} ${activeTab === "sprayers" ? "" : styles.dBlock}`}>
+        <article
+          className={`${styles.content} ${styles.productContent} ${activeTab === "sprayers" ? "" : styles.dBlock}`}
+        >
           <div className={styles.image}>
             <Image
               src={angar2}
@@ -136,7 +140,9 @@ export const ProductSection = () => {
             </div>
           </div>
         </article>
-        <article className={`${styles.content} ${activeTab === "scatters" ? "" : styles.dBlock}`}>
+        <article
+          className={`${styles.content} ${styles.productContent} ${activeTab === "scatters" ? "" : styles.dBlock}`}
+        >
           <div className={styles.image}>
             <Image src={angar3} width={600} height={400} alt="Разбрасыватель синего цвета" className={styles.image} />
           </div>
@@ -177,7 +183,9 @@ export const ProductSection = () => {
             </div>
           </div>
         </article>
-        <article className={`${styles.content} ${activeTab === "others" ? "" : styles.dBlock}`}>
+        <article
+          className={`${styles.content} ${styles.productContent} ${activeTab === "others" ? "" : styles.dBlock}`}
+        >
           <div className={styles.image}>
             <Image src={angar4} alt="Синий трактор на зелёном поле" width={600} height={400} className={styles.image} />
           </div>
@@ -217,7 +225,9 @@ export const ProductSection = () => {
             </div>
           </div>
         </article>
-        <article className={`${styles.content} ${activeTab === "accessories" ? "" : styles.dBlock}`}>
+        <article
+          className={`${styles.content} ${styles.productContent} ${activeTab === "accessories" ? "" : styles.dBlock}`}
+        >
           <div className={styles.image}>
             <Image
               src={angar5}
