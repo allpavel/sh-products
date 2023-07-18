@@ -5,21 +5,26 @@ type Icons = {
   [key: string]: () => JSX.Element;
 };
 
-type Props = {
+interface Props {
   text: string;
   type: "green" | "red" | "outlineGreen" | "outlineRed";
   size: "large" | "medium";
+  onClick?: () => void;
   icon?: string;
-};
+  active?: boolean;
+}
 
 const icons: Icons = {
   telegram: () => <BiLogoTelegram />,
 };
 
-export const Button = ({ text, type, size, icon }: Props) => {
+export const Button = ({ text, type, size, icon, active = false, ...rest }: Props) => {
   return (
-    <button className={`${styles[type]} ${styles[size]} ${styles.callToAction}`}>
-      <span className={styles.text}>{text}</span>
+    <button
+      className={`${styles[type]} ${styles[size]} ${styles.callToAction} ${active ? styles.active : ""}`}
+      {...rest}
+    >
+      <span className={`${icon ? styles.text : ""}`}>{text}</span>
       {icon ? icons[icon]() : ""}
     </button>
   );
