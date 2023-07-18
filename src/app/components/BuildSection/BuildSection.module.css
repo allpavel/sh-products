@@ -30,6 +30,11 @@
   margin-bottom: 12px;
 }
 
+.image {
+  max-width: 600px;
+  max-height: 400px;
+}
+
 .links {
   display: flex;
   justify-content: space-between;

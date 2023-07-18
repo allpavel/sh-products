@@ -141,7 +141,7 @@ export const BuildSection = () => {
         </article>
         <article className={`${styles.content} ${activeTab === "carcass" ? "" : styles.dBlock}`}>
           <div className={styles.image}>
-            <Image src={angar2} alt="Каркасный ангар" />
+            <Image src={angar2} alt="Каркасный ангар" className={styles.image} />
           </div>
           <div>
             <div>
