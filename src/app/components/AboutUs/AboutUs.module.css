@@ -102,6 +102,9 @@
 }
 
 @media (max-width: 576px) {
+  .wrapper {
+    margin-bottom: 0;
+  }
   .desc {
     gap: 10px;
   }
