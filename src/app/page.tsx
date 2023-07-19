@@ -1,3 +1,4 @@
+import { AboutUs } from "./components/AboutUs/AboutUs";
 import { BuildSection } from "./components/BuildSection/BuildSection";
 import { CallToAction } from "./components/CallToAction/CallToAction";
 import { Hero } from "./components/Hero/Hero";
@@ -10,6 +11,7 @@ export default function Home() {
       <BuildSection />
       <ProductSection />
       <CallToAction />
+      <AboutUs />
     </>
   );
 }
