@@ -1,17 +1,7 @@
-import { Montserrat, Inter } from "next/font/google";
+import { inter } from "./fonts";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import "./globals.css";
-
-export const montserrat = Montserrat({
-  display: "swap",
-  subsets: ["cyrillic"],
-});
-
-const inter = Inter({
-  display: "swap",
-  subsets: ["cyrillic"],
-});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
