@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { montserrat } from "@/app/layout";
+import { montserrat } from "@/app/fonts";
 import { RiWhatsappFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { Button } from "../Button/Button";

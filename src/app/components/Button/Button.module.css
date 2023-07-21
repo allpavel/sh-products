@@ -43,8 +43,9 @@
     background-color 0.3s linear;
 }
 
-.outlineGreen:hover {
-  background-color: var(--primary);
+.outlineGreen:hover,
+.outlineGreen:hover.active {
+  background-color: var(--primary-hover);
   color: #fff;
 }
 
@@ -63,8 +64,12 @@
   padding: 14px 22px;
 }
 
-.callToAction:hover {
+.outlineGreen.active {
+  color: #fff;
+  background-color: var(--primary);
+  transition: background-color 0.2s linear;
 }
+
 @media (max-width: 1040px) {
   .callToAction {
     font-size: 16px;

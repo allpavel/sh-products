@@ -5,7 +5,7 @@ import Image from "next/image";
 import { RiWhatsappFill } from "react-icons/ri";
 import { MdEmail, MdMenu, MdClose } from "react-icons/md";
 import { Button } from "../Button/Button";
-import { montserrat } from "@/app/layout";
+import { montserrat } from "@/app/fonts";
 import logo from "../../../../public/images/logo.jpg";
 import angars from "../../../../public/images/angars.jpg";
 import award from "../../../../public/images/award.jpg";
