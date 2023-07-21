@@ -12,21 +12,8 @@ export const HeaderNav = () => {
   const mobileMenuRef = useRef<HTMLUListElement>(null);
   const nestedMenuRef = useRef<HTMLUListElement>(null);
 
-  if (mobileMenuRef.current) {
-    mobileMenuRef.current.style.overflowY = isDropdownOpen ? "hidden" : "";
-  }
-
-  const handleDropdownMenu = (event: React.MouseEvent<HTMLLIElement>): void => {
-    event.stopPropagation();
-
-    if (nestedMenuRef.current) {
-      nestedMenuRef.current.scrollTop = 0;
-    }
-    if (dropdownRef.current && isDropdownOpen && !dropdownRef.current.contains(event.target as Node)) {
-      setIsDropdownOpen(false);
-    } else {
-      setIsDropdownOpen((prev) => !prev);
-    }
+  const handleDropdownMenu = (): void => {
+    setIsDropdownOpen((prev) => !prev);
   };
 
   const handleOpenMobileMenu = () => {
@@ -39,19 +26,17 @@ export const HeaderNav = () => {
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent): void => {
-      if (mobileMenuRef.current && isMobileOpen && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (nestedMenuRef.current && isDropdownOpen && !nestedMenuRef.current.contains(event.target as Node)) {
         setIsMobileOpen(false);
         setIsDropdownOpen(false);
         document.body.style.overflow = "";
       }
     };
-
     document.addEventListener("click", handleOutsideClick);
-
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [isMobileOpen]);
+  }, [isDropdownOpen]);
 
   return (
     <nav className={styles.nav}>
@@ -61,101 +46,103 @@ export const HeaderNav = () => {
         </div>
         <ul className={`${styles.navLinks} ${isMobileOpen ? "" : styles.closeContacts}`} ref={mobileMenuRef}>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
               Ангары
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
               Сельхозтехника
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
               Запчасти
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
               Услуги
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
               О компании
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
               Контакты
             </Link>
           </li>
-          <li onClick={handleDropdownMenu} className={styles.dropDownContainer}>
-            <Link href="#" className={`${styles.link} ${styles.arrow}`} ref={dropdownRef}>
+          <li className={styles.dropDownContainer}>
+            <Link href="#" className={`${styles.link} ${styles.arrow}`} ref={dropdownRef} onClick={handleDropdownMenu}>
               Наши работы {isDropdownOpen ? <MdArrowDropUp /> : <MdArrowDropDown />}
             </Link>
             <ul className={`${styles.dropDownContent} ${isDropdownOpen ? styles.open : ""}`} ref={nestedMenuRef}>
-              <li>
-                <Link href="#" className={`${styles.backArrow}`}>
+              <li className={styles.firstItems}>
+                <Link href="#" className={`${styles.backArrow}`} data-back="back" onClick={handleDropdownMenu}>
                   <MdArrowLeft />
                   Назад
                 </Link>
               </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Ангары бескаркасные
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Тентовые ангары
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Навесы и тока
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Авиационные ангары
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Каркасные ангары
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Бороны
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Разбрасыватели удобрений
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Опрыскиватели
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Прочая сельхозтехника
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Запчасти и комплектующие
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className={styles.link}>
-                  Услуги
-                </Link>
-              </li>
+              <div onClick={handleOpenMobileMenu}>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Ангары бескаркасные
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Тентовые ангары
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Навесы и тока
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Авиационные ангары
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Каркасные ангары
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Бороны
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Разбрасыватели удобрений
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Опрыскиватели
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Прочая сельхозтехника
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Запчасти и комплектующие
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className={styles.link}>
+                    Услуги
+                  </Link>
+                </li>
+              </div>
             </ul>
           </li>
         </ul>

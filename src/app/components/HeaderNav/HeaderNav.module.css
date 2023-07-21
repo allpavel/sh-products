@@ -67,7 +67,6 @@
 .dropDownContent {
   visibility: hidden;
   background-color: var(--primary);
-  border: 1px solid #000;
   list-style: none;
   position: absolute;
   width: 290px;
@@ -87,6 +86,7 @@
   margin-left: 10px;
   padding: 10px 0;
   display: inline-block;
+  z-index: 10;
 }
 
 .dropDownContent .link::after {
@@ -94,6 +94,10 @@
 }
 
 .contactsMenu {
+  display: none;
+}
+
+.firstItems {
   display: none;
 }
 
@@ -128,6 +132,10 @@
   .navLinks li {
     width: 100%;
     border-bottom: 1px solid #fff;
+  }
+
+  .firstItems {
+    display: block;
   }
 
   .link {
