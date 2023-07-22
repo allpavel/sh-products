@@ -8,7 +8,7 @@ import styles from "./HeaderNav.module.css";
 export const HeaderNav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const dropdownRef = useRef<HTMLAnchorElement>(null);
+  const dropdownRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLUListElement>(null);
   const nestedMenuRef = useRef<HTMLUListElement>(null);
 
@@ -76,15 +76,15 @@ export const HeaderNav = () => {
             </Link>
           </li>
           <li className={styles.dropDownContainer}>
-            <Link href="#" className={`${styles.link} ${styles.arrow}`} ref={dropdownRef} onClick={handleDropdownMenu}>
+            <button className={`${styles.link} ${styles.arrow}`} ref={dropdownRef} onClick={handleDropdownMenu}>
               Наши работы {isDropdownOpen ? <MdArrowDropUp /> : <MdArrowDropDown />}
-            </Link>
+            </button>
             <ul className={`${styles.dropDownContent} ${isDropdownOpen ? styles.open : ""}`} ref={nestedMenuRef}>
               <li className={styles.firstItems}>
-                <Link href="#" className={`${styles.backArrow}`} data-back="back" onClick={handleDropdownMenu}>
+                <button className={styles.backArrow} onClick={handleDropdownMenu}>
                   <MdArrowLeft />
                   Назад
-                </Link>
+                </button>
               </li>
               <div onClick={handleOpenMobileMenu}>
                 <li>

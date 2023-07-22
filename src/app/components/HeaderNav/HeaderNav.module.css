@@ -27,6 +27,13 @@
   transition: color 0.3s ease;
 }
 
+button.link {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .link::after {
   content: "";
   position: absolute;
@@ -144,6 +151,10 @@
     width: 100%;
   }
 
+  button.link {
+    text-align: left;
+  }
+
   .backArrow {
     display: flex;
     align-items: center;
@@ -154,6 +165,9 @@
     letter-spacing: 0.2px;
     padding: 10px 0;
     width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
   }
 
   .link::after {
