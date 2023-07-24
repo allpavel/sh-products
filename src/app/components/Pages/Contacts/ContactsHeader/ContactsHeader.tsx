@@ -16,7 +16,7 @@ export const ContactsHeader = () => {
           width="1256"
           height="543"
           frameBorder="0"
-        ></iframe>{" "}
+        ></iframe>
       </div>
     </section>
   );
