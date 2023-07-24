@@ -66,7 +66,7 @@ export const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="contacts" className={styles.link}>
               Контакты
             </Link>
           </li>
