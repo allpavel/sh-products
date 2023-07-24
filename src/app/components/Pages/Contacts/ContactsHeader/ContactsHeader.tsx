@@ -11,12 +11,12 @@ export const ContactsHeader = () => {
           <li className={styles.listItem}>+7 (967) 555-60-76</li>
           <li className={styles.listItem}>mail@agro-teh.su</li>
         </ul>
-        <iframe
+        {/* <iframe
           src="https://yandex.ru/map-widget/v1/?um=constructor%3A22a0c951555e152cc3cedd90bd96088089c67bd237d44ce8cb85fff94a388312&amp;source=constructor"
           width="1256"
           height="543"
           frameBorder="0"
-        ></iframe>{" "}
+        ></iframe> */}
       </div>
     </section>
   );
