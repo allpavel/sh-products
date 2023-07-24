@@ -10,7 +10,10 @@
 
 .title {
   text-transform: uppercase;
-  margin-bottom: 20px;
+}
+
+.card {
+  margin-bottom: 40px;
 }
 
 .content {
@@ -23,13 +26,22 @@
   flex: 0 1 560px;
 }
 
-.columnTitle {
+.columnTitle,
+.lastColumnTitle {
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .columnContent {
   margin-bottom: 10px;
+}
+
+.list {
+  padding-left: 16px;
+}
+
+.list li {
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
@@ -43,7 +55,19 @@
     margin-bottom: 20px;
   }
 
-  .columnTitle {
+  .card {
     margin-bottom: 10px;
+  }
+
+  .card:last-child .column {
+    margin-bottom: 10px;
+  }
+
+  .lastColumnTitle {
+    margin-top: 0;
+  }
+
+  .card .content {
+    gap: 0;
   }
 }
