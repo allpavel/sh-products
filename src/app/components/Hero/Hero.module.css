@@ -54,7 +54,7 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background: #2f7b80;
+  background-color: var(--primary);
   border-radius: 50%;
 }
 
