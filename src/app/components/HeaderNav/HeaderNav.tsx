@@ -2,12 +2,14 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MdArrowDropDown, MdArrowDropUp, MdArrowLeft, MdMenu, MdClose } from "react-icons/md";
 import styles from "./HeaderNav.module.css";
 
 export const HeaderNav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const path = usePathname();
   const dropdownRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLUListElement>(null);
   const nestedMenuRef = useRef<HTMLUListElement>(null);
@@ -32,11 +34,12 @@ export const HeaderNav = () => {
         document.body.style.overflow = "";
       }
     };
+    setIsMobileOpen(false);
     document.addEventListener("click", handleOutsideClick);
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [isDropdownOpen]);
+  }, [isDropdownOpen, path]);
 
   return (
     <nav className={styles.nav}>
@@ -46,32 +49,32 @@ export const HeaderNav = () => {
         </div>
         <ul className={`${styles.navLinks} ${isMobileOpen ? "" : styles.closeContacts}`} ref={mobileMenuRef}>
           <li>
-            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
+            <Link href="#" className={styles.link}>
               Ангары
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
+            <Link href="#" className={styles.link}>
               Сельхозтехника
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
+            <Link href="#" className={styles.link}>
               Запчасти
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
+            <Link href="#" className={styles.link}>
               Услуги
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link} onClick={handleOpenMobileMenu}>
+            <Link href="about" className={styles.link}>
               О компании
             </Link>
           </li>
           <li>
-            <Link href="contacts" className={styles.link} onClick={handleOpenMobileMenu}>
+            <Link href="contacts" className={styles.link}>
               Контакты
             </Link>
           </li>
