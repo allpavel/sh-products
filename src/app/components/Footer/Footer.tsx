@@ -56,7 +56,7 @@ export const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="services" className={styles.link}>
               Услуги
             </Link>
           </li>
