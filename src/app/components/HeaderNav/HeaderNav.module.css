@@ -156,6 +156,7 @@ button.link {
   }
 
   .backArrow {
+    cursor: pointer;
     display: flex;
     align-items: center;
     text-transform: uppercase;
@@ -184,6 +185,9 @@ button.link {
     cursor: pointer;
     display: inline-block;
     color: var(--secondary);
+    background-color: transparent;
+    border: none;
+    z-index: 100;
   }
 
   .contactsMenu svg {

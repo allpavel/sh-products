@@ -2,14 +2,12 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { MdArrowDropDown, MdArrowDropUp, MdArrowLeft, MdMenu, MdClose } from "react-icons/md";
 import styles from "./HeaderNav.module.css";
 
 export const HeaderNav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const path = usePathname();
   const dropdownRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLUListElement>(null);
   const nestedMenuRef = useRef<HTMLUListElement>(null);
@@ -26,6 +24,12 @@ export const HeaderNav = () => {
     setIsMobileOpen((prev) => !prev);
   };
 
+  const closeMenu = () => {
+    document.body.style.overflow = isMobileOpen ? "" : "hidden";
+    setIsDropdownOpen(false);
+    setIsMobileOpen(false);
+  };
+
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent): void => {
       if (nestedMenuRef.current && isDropdownOpen && !nestedMenuRef.current.contains(event.target as Node)) {
@@ -34,47 +38,46 @@ export const HeaderNav = () => {
         document.body.style.overflow = "";
       }
     };
-    setIsMobileOpen(false);
     document.addEventListener("click", handleOutsideClick);
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [isDropdownOpen, path]);
+  }, [isDropdownOpen]);
 
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <div className={styles.contactsMenu} onClick={handleOpenMobileMenu}>
+        <button className={styles.contactsMenu} onClick={handleOpenMobileMenu}>
           {isMobileOpen ? <MdClose /> : <MdMenu />}
-        </div>
+        </button>
         <ul className={`${styles.navLinks} ${isMobileOpen ? "" : styles.closeContacts}`} ref={mobileMenuRef}>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={closeMenu}>
               Ангары
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={closeMenu}>
               Сельхозтехника
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={closeMenu}>
               Запчасти
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link}>
+            <Link href="#" className={styles.link} onClick={closeMenu}>
               Услуги
             </Link>
           </li>
           <li>
-            <Link href="about" className={styles.link}>
+            <Link href="about" className={styles.link} onClick={closeMenu}>
               О компании
             </Link>
           </li>
           <li>
-            <Link href="contacts" className={styles.link}>
+            <Link href="contacts" className={styles.link} onClick={closeMenu}>
               Контакты
             </Link>
           </li>

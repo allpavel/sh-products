@@ -49,3 +49,15 @@
 .red {
   color: var(--secondary-hover);
 }
+
+@media (max-width: 576px) {
+  .list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .listItem {
+    flex-basis: auto;
+    justify-content: flex-start;
+  }
+}
