@@ -25,7 +25,7 @@ export const HeaderNav = () => {
   };
 
   const closeMenu = () => {
-    document.body.style.overflow = isMobileOpen ? "" : "hidden";
+    document.body.style.overflow = "";
     setIsDropdownOpen(false);
     setIsMobileOpen(false);
   };
