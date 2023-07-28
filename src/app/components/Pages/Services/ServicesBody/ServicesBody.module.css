@@ -1,0 +1,14 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding: 0 12px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.bold {
+  font-weight: 700;
+}
