@@ -39,38 +39,26 @@ export const Footer = () => {
           </div>
           <p className={styles.address}>347939, Россия, Ростовская область, Таганрог, ул. Пархоменко, 19</p>
         </div>
-        <ul className={styles.navLinks}>
-          <li>
-            <Link href="#" className={styles.link}>
-              Ангары
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className={styles.link}>
-              Сельхозтехника
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className={styles.link}>
-              Запчасти
-            </Link>
-          </li>
-          <li>
-            <Link href="services" className={styles.link}>
-              Услуги
-            </Link>
-          </li>
-          <li>
-            <Link href="about" className={styles.link}>
-              О компании
-            </Link>
-          </li>
-          <li>
-            <Link href="contacts" className={styles.link}>
-              Контакты
-            </Link>
-          </li>
-        </ul>
+        <nav className={styles.navLinks}>
+          <Link href="#" className={styles.link}>
+            Ангары
+          </Link>
+          <Link href="#" className={styles.link}>
+            Сельхозтехника
+          </Link>
+          <Link href="spares" className={styles.link}>
+            Запчасти
+          </Link>
+          <Link href="services" className={styles.link}>
+            Услуги
+          </Link>
+          <Link href="about" className={styles.link}>
+            О компании
+          </Link>
+          <Link href="contacts" className={styles.link}>
+            Контакты
+          </Link>
+        </nav>
         <div className={styles.ourWorksContainer}>
           <p className={styles.ourWorksTitle}>Наши работы:</p>
           <ul className={styles.ourWorks}>

@@ -62,7 +62,7 @@ export const HeaderNav = () => {
             </Link>
           </li>
           <li>
-            <Link href="#" className={styles.link} onClick={closeMenu}>
+            <Link href="spares" className={styles.link} onClick={closeMenu}>
               Запчасти
             </Link>
           </li>
