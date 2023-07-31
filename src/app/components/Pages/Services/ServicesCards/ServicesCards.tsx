@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getCards } from "@/app/utils/getCards";
+import { getData } from "@/app/utils/getData";
 import styles from "./ServicesCards.module.css";
 
 interface Card {
@@ -32,7 +32,7 @@ interface Cards {
 }
 
 export const ServicesCards = async () => {
-  const cards: Cards = await getCards();
+  const cards: Cards = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/services?populate=*`);
 
   return (
     <div className={styles.wrapper}>
