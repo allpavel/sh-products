@@ -52,7 +52,7 @@ export const HeaderNav = () => {
         </button>
         <ul className={`${styles.navLinks} ${isMobileOpen ? "" : styles.closeContacts}`} ref={mobileMenuRef}>
           <li>
-            <Link href="#" className={styles.link} onClick={closeMenu}>
+            <Link href="angars" className={styles.link} onClick={closeMenu}>
               Ангары
             </Link>
           </li>
