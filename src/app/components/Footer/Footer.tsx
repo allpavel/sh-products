@@ -43,7 +43,7 @@ export const Footer = () => {
           <Link href="#" className={styles.link}>
             Ангары
           </Link>
-          <Link href="#" className={styles.link}>
+          <Link href="technics" className={styles.link}>
             Сельхозтехника
           </Link>
           <Link href="spares" className={styles.link}>
