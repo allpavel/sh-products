@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { getData } from "@/app/utils/getData";
-import styles from "./SpareCards.module.css";
+import styles from "./TechnicsCards.module.css";
 
 interface Card {
   id: number;
   attributes: {
     description: string;
-    image: {
+    cover: {
       data: {
         attributes: {
           alternativeText: string;
@@ -31,20 +31,20 @@ interface Cards {
   };
 }
 
-export const SparesCards = async () => {
-  const cards: Cards = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/spares?populate=*`);
+export const TechnicsCards = async () => {
+  const cards: Cards = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/technics?populate=*`);
 
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>Запчасти и комплектущие</h2>
+        <h2 className={styles.title}>Сельхозтехника</h2>
         <div className={styles.content}>
           {cards.data.map((card: Card) => (
             <article className={styles.card} key={card.id}>
               <div className={styles.imageContainer}>
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${card.attributes.image.data.attributes.url}`}
-                  alt={card.attributes.image.data.attributes.alternativeText}
+                  src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${card.attributes.cover.data.attributes.url}`}
+                  alt={card.attributes.cover.data.attributes.alternativeText}
                   width={300}
                   height={178}
                   className={styles.image}
