@@ -58,3 +58,11 @@
   cursor: pointer;
   box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 20px 0px;
 }
+
+.text {
+  line-height: 1.5;
+}
+
+.marginTop {
+  margin-top: 20px;
+}
