@@ -1,0 +1,19 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding: 30px 12px;
+  margin-bottom: 20px;
+}
+
+.wrapper p {
+  line-height: 1.5;
+}
+
+.borderBottom {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--primary);
+}
