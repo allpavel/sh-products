@@ -8,12 +8,15 @@
   margin-bottom: 20px;
 }
 
-.wrapper p {
+.wrapper p,
+.list {
   line-height: 1.5;
 }
 
-.borderBottom {
-  padding-bottom: 16px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--primary);
+.list {
+  padding-left: 20px;
+}
+
+.bold {
+  font-weight: 700;
 }
