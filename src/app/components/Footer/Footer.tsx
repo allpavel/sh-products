@@ -40,7 +40,7 @@ export const Footer = () => {
           <p className={styles.address}>347939, Россия, Ростовская область, Таганрог, ул. Пархоменко, 19</p>
         </div>
         <nav className={styles.navLinks}>
-          <Link href="#" className={styles.link}>
+          <Link href="angars" className={styles.link}>
             Ангары
           </Link>
           <Link href="technics" className={styles.link}>
