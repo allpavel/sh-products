@@ -70,6 +70,12 @@
   transition: background-color 0.2s linear;
 }
 
+.disabled,
+.disabled:hover {
+  cursor: initial;
+  background-color: var(--secondary-disabled);
+}
+
 @media (max-width: 1040px) {
   .callToAction {
     font-size: 16px;
