@@ -49,7 +49,7 @@ export const AngarCards = async () => {
                   <Image
                     src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${card.attributes.cover.data.attributes.url}`}
                     alt={card.attributes.cover.data.attributes.alternativeText}
-                    width={300}
+                    width={278}
                     height={178}
                     className={styles.image}
                   />
