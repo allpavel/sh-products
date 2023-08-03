@@ -28,6 +28,8 @@
 
 .card {
   flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
   min-height: 300px;
   border: 1px solid var(--primary);
   border-radius: 10px;
@@ -36,6 +38,11 @@
 }
 
 .cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
   padding: 10px;
   text-align: center;
 }
@@ -45,7 +52,6 @@
 }
 
 .price {
-  margin-top: 16px;
   color: var(--secondary);
 }
 
