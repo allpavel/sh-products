@@ -12,16 +12,20 @@ interface Props {
   onClick?: () => void;
   icon?: string;
   active?: boolean;
+  disabled?: boolean;
 }
 
 const icons: Icons = {
   telegram: () => <BiLogoTelegram />,
 };
 
-export const Button = ({ text, type, size, icon, active = false, ...rest }: Props) => {
+export const Button = ({ text, type, size, icon, disabled = false, active = false, ...rest }: Props) => {
   return (
     <button
-      className={`${styles[type]} ${styles[size]} ${styles.callToAction} ${active ? styles.active : ""}`}
+      className={`${styles[type]} ${styles[size]} ${styles.callToAction} ${active && styles.active} ${
+        disabled && styles.disabled
+      }`}
+      disabled={disabled}
       {...rest}
     >
       <span className={`${icon ? styles.text : ""}`}>{text}</span>
