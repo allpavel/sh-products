@@ -60,16 +60,18 @@ export const ImageGallery = () => {
   return (
     <section>
       <h2 className={styles.title}>Галерея</h2>
-      {images &&
-        images.map((image) => (
-          <Image
-            src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.attributes.url}`}
-            alt={image.attributes.alternativeText}
-            width={200}
-            height={200}
-            key={image.id}
-          />
-        ))}
+      <div className={styles.images}>
+        {images &&
+          images.map((image) => (
+            <Image
+              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.attributes.url}`}
+              alt={image.attributes.alternativeText}
+              width={300}
+              height={300}
+              key={image.id}
+            />
+          ))}
+      </div>
     </section>
   );
 };
