@@ -5,6 +5,7 @@ import { TbAirConditioning } from "react-icons/tb";
 import { Button } from "@/app/components/Button/Button";
 import { getData } from "@/app/utils/getData";
 import styles from "./AngarsCardPage.module.css";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 interface Card {
   data: {
@@ -41,6 +42,7 @@ export default async function AngarsCardPage({ params }: { params: { slug: strin
               alt={data.attributes.cover.data.attributes.alternativeText}
               width={600}
               height={400}
+              priority
               className={styles.image}
             />
           </div>
@@ -80,6 +82,9 @@ export default async function AngarsCardPage({ params }: { params: { slug: strin
               </div>
             </form>
           </div>
+        </article>
+        <article className={styles.md}>
+          <ReactMarkdown>{data.attributes.description}</ReactMarkdown>
         </article>
       </div>
     </section>
