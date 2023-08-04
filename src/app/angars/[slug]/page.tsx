@@ -6,6 +6,7 @@ import { Button } from "@/app/components/Button/Button";
 import { getData } from "@/app/utils/getData";
 import styles from "./AngarsCardPage.module.css";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { ImageGallery } from "@/app/components/ImageGallery/ImageGallery";
 
 interface Card {
   data: {
@@ -24,17 +25,24 @@ interface Card {
       price: string;
       title: string;
       slug: string;
+      imageGallery: {
+        data: {
+          id: number;
+          attributes: {
+            url: string;
+          };
+        }[];
+      };
     };
   };
 }
 
 export default async function AngarsCardPage({ params }: { params: { slug: string } }) {
   const { data }: Card = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/angars/${params.slug}`);
-
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>{data.attributes.title}</h2>
+        <h1 className={styles.title}>{data.attributes.title}</h1>
         <article className={styles.content}>
           <div className={styles.imageContainer}>
             <Image
@@ -86,6 +94,7 @@ export default async function AngarsCardPage({ params }: { params: { slug: strin
         <article className={styles.md}>
           <ReactMarkdown>{data.attributes.description}</ReactMarkdown>
         </article>
+        <ImageGallery />
       </div>
     </section>
   );
