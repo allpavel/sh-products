@@ -35,7 +35,7 @@ interface Card {
   };
 }
 
-interface Gallery {
+interface GalleryProps {
   id: number;
   attributes: {
     alternativeText: string;
@@ -43,8 +43,8 @@ interface Gallery {
   };
 }
 
-export const ImageGallery = () => {
-  const [images, setImages] = useState<Gallery[]>();
+export const Gallery = () => {
+  const [images, setImages] = useState<GalleryProps[]>();
   const params = useParams();
 
   useEffect(() => {
@@ -52,7 +52,6 @@ export const ImageGallery = () => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/angars/${params.slug}`);
       const data: Card = await response.json();
       setImages(data.data.attributes.imageGallery.data);
-      return data;
     };
     loadData();
   }, [params.slug]);
@@ -69,6 +68,7 @@ export const ImageGallery = () => {
               width={300}
               height={300}
               key={image.id}
+              className={`${styles.image}`}
             />
           ))}
       </div>

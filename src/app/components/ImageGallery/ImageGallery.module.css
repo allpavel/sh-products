@@ -16,3 +16,14 @@
   content: "";
   flex: auto;
 }
+
+.image {
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+.image:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}

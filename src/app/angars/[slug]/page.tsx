@@ -1,12 +1,12 @@
 import Image from "next/image";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { MdOutlineConstruction } from "react-icons/md";
 import { FaTemperatureHigh } from "react-icons/fa";
 import { TbAirConditioning } from "react-icons/tb";
 import { Button } from "@/app/components/Button/Button";
+import { Gallery } from "@/app/components/ImageGallery/ImageGallery";
 import { getData } from "@/app/utils/getData";
 import styles from "./AngarsCardPage.module.css";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { ImageGallery } from "@/app/components/ImageGallery/ImageGallery";
 
 interface Card {
   data: {
@@ -94,7 +94,7 @@ export default async function AngarsCardPage({ params }: { params: { slug: strin
         <article className={styles.md}>
           <ReactMarkdown>{data.attributes.description}</ReactMarkdown>
         </article>
-        <ImageGallery />
+        <Gallery />
       </div>
     </section>
   );

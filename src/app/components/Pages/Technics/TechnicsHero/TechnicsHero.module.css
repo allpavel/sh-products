@@ -1,8 +1,12 @@
 .container {
-  background-image: url("../../../../../../public/images/technics.jpg");
+  background-image: url("../../../../../../public/images/technics.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @supports (background-image: url("../../../../../../public/images/technics.avif")) {
+    background-image: url("../../../../../../public/images/technics.avif");
+  }
 }
 
 .filter {
