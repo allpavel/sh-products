@@ -1,0 +1,35 @@
+.images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 16px;
+  justify-content: space-between;
+}
+
+.images::after {
+  content: "";
+  flex: auto;
+}
+
+.card {
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+.image:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.link {
+  position: absolute;
+  content: "";
+  inset: 0 0 0 0;
+  z-index: 1;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0);
+}

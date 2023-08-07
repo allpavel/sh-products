@@ -4,26 +4,3 @@
   margin-top: 20px;
   margin-bottom: 10px;
 }
-
-.images {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  grid-gap: 16px;
-  justify-content: space-between;
-}
-
-.images::after {
-  content: "";
-  flex: auto;
-}
-
-.image {
-  object-fit: cover;
-  opacity: 1;
-  transition: opacity 0.3s linear;
-}
-
-.image:hover {
-  cursor: pointer;
-  opacity: 0.75;
-}

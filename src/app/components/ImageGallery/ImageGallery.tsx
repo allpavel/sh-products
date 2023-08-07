@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import Image from "next/image";
+import { ImageCards } from "../ImageCards/ImageCards";
 import styles from "./ImageGallery.module.css";
 
 interface Card {
@@ -59,19 +59,7 @@ export const Gallery = () => {
   return (
     <section>
       <h2 className={styles.title}>Галерея</h2>
-      <div className={styles.images}>
-        {images &&
-          images.map((image) => (
-            <Image
-              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.attributes.url}`}
-              alt={image.attributes.alternativeText}
-              width={300}
-              height={300}
-              key={image.id}
-              className={`${styles.image}`}
-            />
-          ))}
-      </div>
+      {images && <ImageCards images={images} galleryId="test-gallery" />}
     </section>
   );
 };
