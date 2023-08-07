@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { MdOutlineConstruction } from "react-icons/md";
 import { FaTemperatureHigh } from "react-icons/fa";
@@ -24,6 +25,8 @@ interface Card {
       };
       price: string;
       title: string;
+      category: string;
+      subCategory: string;
       slug: string;
       imageGallery: {
         data: {
@@ -42,6 +45,17 @@ export default async function AngarsCardPage({ params }: { params: { slug: strin
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
+        <nav className={styles.breadcrumbs}>
+          <Link href="/" className={styles.link}>
+            Главная
+          </Link>
+          <span className={styles.divider}>/</span>
+          <Link href="/angars" className={styles.link}>
+            {data.attributes.category}
+          </Link>
+          <span className={styles.divider}>/</span>
+          <span className={styles.currentPage}>{data.attributes.title}</span>
+        </nav>
         <h1 className={styles.title}>{data.attributes.title}</h1>
         <article className={styles.content}>
           <div className={styles.imageContainer}>
