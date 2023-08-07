@@ -30,6 +30,7 @@
 }
 
 .card {
+  position: relative;
   flex: 0 0 280px;
   display: flex;
   flex-direction: column;
@@ -61,4 +62,13 @@
 .card:hover {
   cursor: pointer;
   box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 20px 0px;
+}
+
+.link {
+  position: absolute;
+  content: "";
+  inset: 0 0 0 0;
+  z-index: 1;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0);
 }

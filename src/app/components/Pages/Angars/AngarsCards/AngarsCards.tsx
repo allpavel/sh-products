@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getData } from "@/app/utils/getData";
 import styles from "./AngarsCards.module.css";
 import { AngarsCardLoader } from "../AngarsCardLoader/AngarsCardLoader";
+import Link from "next/link";
 
 interface Card {
   id: number;
@@ -17,6 +18,7 @@ interface Card {
     };
     price: string;
     title: string;
+    slug: string;
   };
 }
 
@@ -58,6 +60,7 @@ export const AngarCards = async () => {
                   <h3>{card.attributes.title}</h3>
                   <p className={styles.price}>{card.attributes.price}</p>
                 </div>
+                <Link href={`angars/${card.attributes.slug}`} className={styles.link} />
               </article>
             ))}
         </div>

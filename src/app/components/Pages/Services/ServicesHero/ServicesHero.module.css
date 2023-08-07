@@ -1,7 +1,11 @@
 .container {
-  background-image: url("../../../../../../public/images/build-angar4.jpg");
+  background-image: url("../../../../../../public/images/build-angar4.webp");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+
+  @supports (background-image: url("../../../../../../public/images/build-angar4.avif")) {
+    background-image: url("../../../../../../public/images/build-angar4.avif");
+  }
 }
 
 .filter {

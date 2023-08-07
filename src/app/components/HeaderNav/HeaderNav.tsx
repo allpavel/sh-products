@@ -52,32 +52,32 @@ export const HeaderNav = () => {
         </button>
         <ul className={`${styles.navLinks} ${isMobileOpen ? "" : styles.closeContacts}`} ref={mobileMenuRef}>
           <li>
-            <Link href="angars" className={styles.link} onClick={closeMenu}>
+            <Link href="/angars" className={styles.link} onClick={closeMenu}>
               Ангары
             </Link>
           </li>
           <li>
-            <Link href="technics" className={styles.link} onClick={closeMenu}>
+            <Link href="/technics" className={styles.link} onClick={closeMenu}>
               Сельхозтехника
             </Link>
           </li>
           <li>
-            <Link href="spares" className={styles.link} onClick={closeMenu}>
+            <Link href="/spares" className={styles.link} onClick={closeMenu}>
               Запчасти
             </Link>
           </li>
           <li>
-            <Link href="services" className={styles.link} onClick={closeMenu}>
+            <Link href="/services" className={styles.link} onClick={closeMenu}>
               Услуги
             </Link>
           </li>
           <li>
-            <Link href="about" className={styles.link} onClick={closeMenu}>
+            <Link href="/about" className={styles.link} onClick={closeMenu}>
               О компании
             </Link>
           </li>
           <li>
-            <Link href="contacts" className={styles.link} onClick={closeMenu}>
+            <Link href="/contacts" className={styles.link} onClick={closeMenu}>
               Контакты
             </Link>
           </li>
