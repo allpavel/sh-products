@@ -4,9 +4,9 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { MdOutlineConstruction } from "react-icons/md";
 import { FaTemperatureHigh } from "react-icons/fa";
 import { TbAirConditioning } from "react-icons/tb";
-import { Button } from "@/app/components/Button/Button";
-import { Gallery } from "@/app/components/ImageGallery/ImageGallery";
-import { getData } from "@/app/utils/getData";
+import { Button } from "@/components/Button/Button";
+import { Gallery } from "@/components/ImageGallery/ImageGallery";
+import { getData } from "@/utils/getData";
 import styles from "./TechCard.module.css";
 
 interface Card {
