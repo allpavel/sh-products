@@ -7,7 +7,7 @@ export default function Angars() {
   return (
     <>
       <AngarsHero />
-      <Cards pathname="/angars" />
+      <Cards pathname="/angars" title="Ангары" />
       <AngarsContent />
       <CallToAction />
     </>
