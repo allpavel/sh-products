@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { LoadButton } from "@/components/LoadButton/LoadButton";
 import { getData } from "@/utils/getData";
 import styles from "./CardsLoader.module.css";
@@ -20,6 +21,7 @@ interface Card {
     };
     price: string;
     title: string;
+    slug: string;
   };
 }
 
@@ -72,6 +74,7 @@ export const CardsLoader = ({ page }: Props) => {
                 <h3>{card.attributes.title}</h3>
                 <p className={styles.price}>{card.attributes.price}</p>
               </div>
+              <Link href={`${page}/${card.attributes.slug}`} className={styles.link} />
             </article>
           ))}
       </div>
