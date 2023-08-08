@@ -49,8 +49,8 @@ export const ImageCards = ({ images, galleryId }: GalleryProps) => {
           <Link
             href={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.attributes.url}`}
             className={styles.link}
-            data-pswp-width={0}
-            data-pswp-height={0}
+            data-pswp-width={700}
+            data-pswp-height={600}
           />
         </div>
       ))}

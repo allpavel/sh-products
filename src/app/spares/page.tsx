@@ -6,7 +6,7 @@ export default function Spares() {
   return (
     <>
       <Hero />
-      <Cards />
+      <Cards pathname="/spares" />
       <CallToAction />
     </>
   );

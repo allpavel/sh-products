@@ -1,9 +1,5 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { getData } from "@/app/utils/getData";
 import { CardsLoader } from "../CardsLoader/CardsLoader";
 import styles from "./Cards.module.css";
@@ -38,19 +34,10 @@ interface CardsProp {
   };
 }
 
-export const Cards = () => {
-  const [cards, setCards] = useState<CardsProp>();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response: CardsProp = await getData(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/api${pathname}?populate=*&pagination[page]=1&pagination[pageSize]=${process.env.NEXT_PUBLIC_PAGE_SIZE}`
-      );
-      setCards(response);
-    };
-    fetchData();
-  }, [pathname]);
+export const Cards = async ({ pathname }: { pathname: string }) => {
+  const cards: CardsProp = await getData(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api${pathname}?populate=*&pagination[page]=1&pagination[pageSize]=${process.env.NEXT_PUBLIC_PAGE_SIZE}`
+  );
 
   return (
     <section className={styles.container}>
@@ -73,7 +60,7 @@ export const Cards = () => {
                   <h3>{card.attributes.title}</h3>
                   <p className={styles.price}>{card.attributes.price}</p>
                 </div>
-                <Link href={`angars/${card.attributes.slug}`} className={styles.link} />
+                <Link href={`${pathname}/${card.attributes.slug}`} className={styles.link} />
               </article>
             ))}
         </div>

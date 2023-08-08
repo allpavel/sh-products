@@ -7,7 +7,7 @@ export default function Technics() {
   return (
     <>
       <TechnicsHero />
-      <Cards />
+      <Cards pathname="/technics" />
       <TechnicsContent />
       <CallToAction />
     </>
