@@ -5,7 +5,7 @@ import { MdOutlineConstruction } from "react-icons/md";
 import { FaTemperatureHigh } from "react-icons/fa";
 import { TbAirConditioning } from "react-icons/tb";
 import { Button } from "@/components/Button/Button";
-import { Gallery } from "@/components/ImageGallery/ImageGallery";
+import { ImageGallery } from "@/components/ImageGallery/ImageGallery";
 import { getData } from "@/utils/getData";
 import styles from "./TechCard.module.css";
 
@@ -32,6 +32,7 @@ interface Card {
         data: {
           id: number;
           attributes: {
+            alternativeText: string;
             url: string;
           };
         }[];
@@ -109,7 +110,7 @@ export default async function TechCardPage({ params }: { params: { slug: string 
         <article className={styles.md}>
           <ReactMarkdown>{data.attributes.description}</ReactMarkdown>
         </article>
-        <Gallery />
+        <ImageGallery data={data.attributes.imageGallery.data} />
       </div>
     </section>
   );
