@@ -1,12 +1,12 @@
-import { CallToAction } from "../components/CallToAction/CallToAction";
-import { Cards } from "../components/Cards/Cards";
-import { Hero } from "../components/Pages/Spares/Hero/Hero";
+import { Hero } from "@/components/Hero/Hero";
+import { Cards } from "@/components/Cards/Cards";
+import { CallToAction } from "@/components/CallToAction/CallToAction";
 
 export default function Spares() {
   return (
     <>
       <Hero />
-      <Cards />
+      <Cards pathname="/spares" />
       <CallToAction />
     </>
   );
