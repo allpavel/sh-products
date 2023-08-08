@@ -6,7 +6,7 @@ export default function Spares() {
   return (
     <>
       <Hero />
-      <Cards pathname="/spares" />
+      <Cards pathname="/spares" title="Запчасти и комплектующие" />
       <CallToAction />
     </>
   );

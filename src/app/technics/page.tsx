@@ -7,7 +7,7 @@ export default function Technics() {
   return (
     <>
       <TechnicsHero />
-      <Cards pathname="/technics" />
+      <Cards pathname="/technics" title="Сельхозтехника" />
       <TechnicsContent />
       <CallToAction />
     </>

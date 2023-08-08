@@ -22,7 +22,7 @@ interface Card {
   };
 }
 
-interface CardsProp {
+interface CardsSchema {
   data: Card[];
   meta: {
     pagination: {
@@ -34,15 +34,20 @@ interface CardsProp {
   };
 }
 
-export const Cards = async ({ pathname }: { pathname: string }) => {
-  const cards: CardsProp = await getData(
+interface Props {
+  pathname: string;
+  title: string;
+}
+
+export const Cards = async ({ pathname, title }: Props) => {
+  const cards: CardsSchema = await getData(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/api${pathname}?populate=*&pagination[page]=1&pagination[pageSize]=${process.env.NEXT_PUBLIC_PAGE_SIZE}`
   );
 
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>Ангары</h2>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.content}>
           {cards &&
             cards.data.map((card: Card) => (
