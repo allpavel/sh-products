@@ -1,10 +1,10 @@
-import { ServicesCards } from "../ServicesCards/ServicesCards";
+import { Cards } from "@/app/components/Cards/Cards";
 import styles from "./ServicesBody.module.css";
 
 export const ServicesBody = () => {
   return (
     <section className={styles.container}>
-      <ServicesCards />
+      <Cards />
       <div className={styles.wrapper}>
         <p className={styles.bold}>
           Предприятие ООО «АГРО-ТЕХ» предоставляет широкий спектр производственных услуг по изготовлению деталей по
