@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { MdOutlineConstruction } from "react-icons/md";
-import { FaTemperatureHigh } from "react-icons/fa";
-import { TbAirConditioning } from "react-icons/tb";
 import { Button } from "@/components/Button/Button";
 import { ImageGallery } from "@/components/ImageGallery/ImageGallery";
 import { getData } from "@/utils/getData";
@@ -71,21 +68,10 @@ export default async function TechCardPage({ params }: { params: { slug: string 
             />
           </div>
           <div className={styles.desc}>
-            <div className={styles.icons}>
-              <div className={styles.iconWrapper}>
-                <MdOutlineConstruction className={styles.icon} />
-                От 12 метров до 28 метров
-              </div>
-              <div className={styles.iconWrapper}>
-                <FaTemperatureHigh className={styles.icon} />
-                Утепление пенополиуретаном
-              </div>
-              <div className={styles.iconWrapper}>
-                <TbAirConditioning className={styles.icon} />
-                Монтаж системы вентиляции
-              </div>
-            </div>
-            <p className={styles.price}>{data.attributes.price}</p>
+            <p className={styles.price}>
+              <span>Цена: </span>
+              {data.attributes.price}
+            </p>
             <form className={styles.form}>
               <p className={styles.callToAction}>Получить расчёт:</p>
               <label htmlFor="tel">
