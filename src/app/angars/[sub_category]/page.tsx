@@ -7,7 +7,7 @@ import { CardsSchema } from "@/types/types";
 
 export default async function AngarCards({ params }: { params: { sub_category: string } }) {
   const cards: CardsSchema = await getData(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/angars?populate=*&filters[sub_category][slug][$eq]=${params.sub_category}`
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/angars?populate=*&filters[sub_category][slug][$eq]=${params.sub_category}&pagination[page]=1&pagination[pageSize]=${process.env.NEXT_PUBLIC_PAGE_SIZE}`
   );
   return (
     <>
