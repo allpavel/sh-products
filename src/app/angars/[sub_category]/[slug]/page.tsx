@@ -7,52 +7,13 @@ import { TbAirConditioning } from "react-icons/tb";
 import { Button } from "@/components/Button/Button";
 import { ImageGallery } from "@/components/ImageGallery/ImageGallery";
 import { getData } from "@/utils/getData";
+import { CardPage } from "@/types/types";
 import styles from "./AngarsCardPage.module.css";
-
-interface Card {
-  data: {
-    id: number;
-    attributes: {
-      shortDescription: string;
-      description: string;
-      cover: {
-        data: {
-          attributes: {
-            alternativeText: string;
-            url: string;
-          };
-        };
-      };
-      price: string;
-      title: string;
-      category: string;
-      slug: string;
-      sub_category: {
-        data: {
-          id: number;
-          attributes: {
-            title: string;
-            slug: string;
-          };
-        };
-      };
-      imageGallery: {
-        data: {
-          id: number;
-          attributes: {
-            alternativeText: string;
-            url: string;
-          };
-        }[];
-      };
-    };
-  }[];
-}
 
 export default async function AngarsCardPage({ params }: { params: { slug: string } }) {
   const {
     data: [data],
-  }: Card = await getData(
+  }: CardPage = await getData(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/angars/?filters[slug][$eq]=${params.slug}&populate=*`
   );
 

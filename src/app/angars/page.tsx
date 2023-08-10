@@ -1,42 +1,9 @@
-import { CallToAction } from "@/components/CallToAction/CallToAction";
-import { Cards } from "@/components/Cards/Cards";
 import { AngarsHero } from "@/components/Pages/Angars/AngarsHero/AngarsHero";
+import { Cards } from "@/components/Cards/Cards";
 import { AngarsContent } from "@/components/Pages/Angars/AngarsContent/AngarsContent";
+import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
-
-interface Card {
-  id: number;
-  attributes: {
-    title: string;
-    cover: {
-      data: {
-        attributes: {
-          alternativeText: string;
-          formats: {
-            thumbnail: {
-              url: string;
-            };
-          };
-          url: string;
-        };
-      };
-    };
-    price?: string;
-    slug: string;
-  };
-}
-
-interface CardsSchema {
-  data: Card[];
-  meta: {
-    pagination: {
-      page: number;
-      pageCount: number;
-      pageSize: number;
-      total: number;
-    };
-  };
-}
+import { CardsSchema } from "@/types/types";
 
 export default async function Angars() {
   const cards: CardsSchema = await getData(

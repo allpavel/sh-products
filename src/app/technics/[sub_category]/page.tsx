@@ -1,13 +1,13 @@
 import { AngarsHero } from "@/components/Pages/Angars/AngarsHero/AngarsHero";
 import { Cards } from "@/components/Cards/Cards";
-import { AngarsContent } from "@/components/Pages/Angars/AngarsContent/AngarsContent";
+import { TechnicsContent } from "@/components/Pages/Technics/TechnicsContent/TechnicsContent";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
 
 export default async function AngarCards({ params }: { params: { sub_category: string } }) {
   const cards: CardsSchema = await getData(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/angars?populate=*&filters[sub_category][slug][$eq]=${params.sub_category}`
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/technics?populate=*&filters[sub_category][slug][$eq]=${params.sub_category}`
   );
   return (
     <>
@@ -15,9 +15,9 @@ export default async function AngarCards({ params }: { params: { sub_category: s
       <Cards
         cards={cards}
         title={cards.data[0].attributes.sub_category.data.attributes.title}
-        pathname={`/angars/${params.sub_category}`}
+        pathname={`/technics/${params.sub_category}`}
       />
-      <AngarsContent />
+      <TechnicsContent />
       <CallToAction />
     </>
   );
