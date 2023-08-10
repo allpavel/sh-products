@@ -2,15 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Button } from "@/components/Button/Button";
-import { ImageGallery } from "@/components/ImageGallery/ImageGallery";
 import { getData } from "@/utils/getData";
-import styles from "./TechCard.module.css";
+import styles from "./Services.module.css";
 
 interface Card {
   data: {
     attributes: {
       id: number;
-      shortDescription: string;
       description: string;
       cover: {
         data: {
@@ -25,21 +23,12 @@ interface Card {
       category: string;
       subCategory: string;
       slug: string;
-      imageGallery: {
-        data: {
-          id: number;
-          attributes: {
-            alternativeText: string;
-            url: string;
-          };
-        }[];
-      };
     };
   };
 }
 
-export default async function TechCardPage({ params }: { params: { slug: string } }) {
-  const { data }: Card = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/technics/${params.slug}`);
+export default async function SpareCardPage({ params }: { params: { slug: string } }) {
+  const { data }: Card = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/services/${params.slug}`);
 
   return (
     <section className={styles.container}>
@@ -49,7 +38,7 @@ export default async function TechCardPage({ params }: { params: { slug: string 
             Главная
           </Link>
           <span className={styles.divider}>/</span>
-          <Link href="/technics" className={styles.link}>
+          <Link href="/services" className={styles.link}>
             {data.attributes.category}
           </Link>
           <span className={styles.divider}>/</span>
@@ -68,10 +57,7 @@ export default async function TechCardPage({ params }: { params: { slug: string 
             />
           </div>
           <div className={styles.desc}>
-            <p className={styles.price}>
-              <span>Цена: </span>
-              {data.attributes.price}
-            </p>
+            <p className={styles.price}>{data.attributes.price}</p>
             <form className={styles.form}>
               <p className={styles.callToAction}>Получить расчёт:</p>
               <label htmlFor="tel">
@@ -96,7 +82,6 @@ export default async function TechCardPage({ params }: { params: { slug: string 
         <article className={styles.md}>
           <ReactMarkdown>{data.attributes.description}</ReactMarkdown>
         </article>
-        <ImageGallery data={data.attributes.imageGallery.data} />
       </div>
     </section>
   );
