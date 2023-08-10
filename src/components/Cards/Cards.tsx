@@ -1,23 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getData } from "@/utils/getData";
 import { CardsLoader } from "../CardsLoader/CardsLoader";
 import styles from "./Cards.module.css";
 
 interface Card {
   id: number;
   attributes: {
-    description: string;
+    title: string;
     cover: {
       data: {
         attributes: {
           alternativeText: string;
+          formats: {
+            thumbnail: {
+              url: string;
+            };
+          };
           url: string;
         };
       };
     };
-    price: string;
-    title: string;
+    price?: string;
     slug: string;
   };
 }
@@ -34,16 +37,14 @@ interface CardsSchema {
   };
 }
 
-interface Props {
-  pathname: string;
+interface CardProps {
+  cards: CardsSchema;
   title: string;
+  pathname: string;
+  scrollToTop?: boolean;
 }
 
-export const Cards = async ({ pathname, title }: Props) => {
-  const cards: CardsSchema = await getData(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api${pathname}?populate=*&pagination[page]=1&pagination[pageSize]=${process.env.NEXT_PUBLIC_PAGE_SIZE}`
-  );
-
+export const Cards = async ({ cards, title, pathname, scrollToTop = true }: CardProps) => {
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
@@ -63,9 +64,9 @@ export const Cards = async ({ pathname, title }: Props) => {
                 </div>
                 <div className={styles.cardContent}>
                   <h3>{card.attributes.title}</h3>
-                  <p className={styles.price}>{card.attributes.price}</p>
+                  {card.attributes.price && <p className={styles.price}>{card.attributes.price}</p>}
                 </div>
-                <Link href={`${pathname}/${card.attributes.slug}`} className={styles.link} />
+                <Link href={`${pathname}/${card.attributes.slug}`} className={styles.link} scroll={scrollToTop} />
               </article>
             ))}
         </div>
