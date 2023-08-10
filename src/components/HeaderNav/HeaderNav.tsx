@@ -6,35 +6,33 @@ import { MdArrowDropDown, MdArrowDropUp, MdArrowLeft, MdMenu, MdClose } from "re
 import styles from "./HeaderNav.module.css";
 
 export const HeaderNav = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isOurWorksMenuOpen, setIsOurWorksMenuOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const dropdownRef = useRef<HTMLButtonElement>(null);
-  const mobileMenuRef = useRef<HTMLUListElement>(null);
   const nestedMenuRef = useRef<HTMLUListElement>(null);
 
-  const handleDropdownMenu = (): void => {
-    setIsDropdownOpen((prev) => !prev);
+  const handleOurWorksMenuMenu = (): void => {
+    setIsOurWorksMenuOpen((prev) => !prev);
   };
 
   const handleOpenMobileMenu = () => {
-    document.body.style.overflow = isMobileOpen ? "" : "hidden";
-    if (isDropdownOpen) {
-      setIsDropdownOpen(false);
-    }
     setIsMobileOpen((prev) => !prev);
+    document.body.style.overflow = isMobileOpen ? "" : "hidden";
+    if (isOurWorksMenuOpen) {
+      setIsOurWorksMenuOpen(false);
+    }
   };
 
   const closeMenu = () => {
     document.body.style.overflow = "";
-    setIsDropdownOpen(false);
+    setIsOurWorksMenuOpen(false);
     setIsMobileOpen(false);
   };
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent): void => {
-      if (nestedMenuRef.current && isDropdownOpen && !nestedMenuRef.current.contains(event.target as Node)) {
+      if (nestedMenuRef.current && isOurWorksMenuOpen && !nestedMenuRef.current.contains(event.target as Node)) {
         setIsMobileOpen(false);
-        setIsDropdownOpen(false);
+        setIsOurWorksMenuOpen(false);
         document.body.style.overflow = "";
       }
     };
@@ -42,7 +40,7 @@ export const HeaderNav = () => {
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [isDropdownOpen]);
+  }, [isOurWorksMenuOpen]);
 
   return (
     <nav className={styles.nav}>
@@ -50,7 +48,7 @@ export const HeaderNav = () => {
         <button className={styles.contactsMenu} onClick={handleOpenMobileMenu}>
           {isMobileOpen ? <MdClose /> : <MdMenu />}
         </button>
-        <ul className={`${styles.navLinks} ${isMobileOpen ? "" : styles.closeContacts}`} ref={mobileMenuRef}>
+        <ul className={`${styles.navLinks} ${isMobileOpen ? "" : styles.closeContacts}`}>
           <li>
             <Link href="/angars" className={styles.link} onClick={closeMenu}>
               Ангары
@@ -82,17 +80,17 @@ export const HeaderNav = () => {
             </Link>
           </li>
           <li className={styles.dropDownContainer}>
-            <button className={`${styles.link} ${styles.arrow}`} ref={dropdownRef} onClick={handleDropdownMenu}>
-              Наши работы {isDropdownOpen ? <MdArrowDropUp /> : <MdArrowDropDown />}
+            <button className={`${styles.link} ${styles.arrow}`} onClick={handleOurWorksMenuMenu}>
+              Наши работы {isOurWorksMenuOpen ? <MdArrowDropUp /> : <MdArrowDropDown />}
             </button>
-            <ul className={`${styles.dropDownContent} ${isDropdownOpen ? styles.open : ""}`} ref={nestedMenuRef}>
+            <ul className={`${styles.dropDownContent} ${isOurWorksMenuOpen ? styles.open : ""}`} ref={nestedMenuRef}>
               <li className={styles.firstItems}>
-                <button className={styles.backArrow} onClick={handleDropdownMenu}>
+                <button className={styles.backArrow} onClick={handleOurWorksMenuMenu}>
                   <MdArrowLeft />
                   Назад
                 </button>
               </li>
-              <div onClick={handleOpenMobileMenu}>
+              <div onClick={closeMenu}>
                 <li>
                   <Link href="/angars/angary-beskarkasnye" className={styles.link}>
                     Ангары бескаркасные
