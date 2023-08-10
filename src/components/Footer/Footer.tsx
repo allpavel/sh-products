@@ -63,57 +63,57 @@ export const Footer = () => {
           <p className={styles.ourWorksTitle}>Наши работы:</p>
           <ul className={styles.ourWorks}>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/angars/angary-beskarkasnye" className={styles.link}>
                 Ангары бескаркасные
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/angars/tentovye-angary" className={styles.link}>
                 Тентовые ангары
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/angars/karkasnye-angary/toka-karkasanye-navesy" className={styles.link}>
                 Навесы и тока
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/angars/angary-beskarkasnye/aviaczionnye-angary" className={styles.link}>
                 Авиационные ангары
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/angars/karkasnye-angary" className={styles.link}>
                 Каркасные ангары
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/technics/borony" className={styles.link}>
                 Бороны
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/technics/razbrasyvateli-udobrenij" className={styles.link}>
                 Разбрасыватели удобрений
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/technics/opryskivateli" className={styles.link}>
                 Опрыскиватели
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/technics/prochaya-selhoztehnika" className={styles.link}>
                 Прочая сельхозтехника
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/spares" className={styles.link}>
                 Запчасти и комплектующие
               </Link>
             </li>
             <li>
-              <Link href="#" className={styles.link}>
+              <Link href="/services" className={styles.link}>
                 Услуги
               </Link>
             </li>
