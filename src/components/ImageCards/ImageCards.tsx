@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
-import "photoswipe/style.css";
 import styles from "./ImageCards.module.css";
+import "photoswipe/style.css";
 
 interface GalleryProps {
   images: {
