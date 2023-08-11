@@ -15,11 +15,13 @@ export interface Card {
         };
       };
     };
+    category: string;
     sub_category: {
       data: {
         id: number;
         attributes: {
           title: string;
+          slug: string;
         };
       };
     };

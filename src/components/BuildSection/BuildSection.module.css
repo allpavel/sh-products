@@ -35,6 +35,10 @@
   margin-bottom: 12px;
 }
 
+.upperCase {
+  text-transform: uppercase;
+}
+
 .image {
   flex-basis: 600px;
   max-width: 600px;
