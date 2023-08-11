@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { GiAchievement } from "react-icons/gi";
 import { PiHandshakeBold, PiCertificate } from "react-icons/pi";
-import aboutUs1 from "../../../public/images/aboutus-1.jpg";
-import aboutUs2 from "../../../public/images/aboutus-2.jpg";
-import aboutUs3 from "../../../public/images/aboutus-3.jpg";
-import aboutUs4 from "../../../public/images/aboutus-4.jpg";
-import aboutUs5 from "../../../public/images/aboutus-5.jpg";
-import aboutUs6 from "../../../public/images/aboutus-6.jpg";
-import aboutUs7 from "../../../public/images/aboutus-7.jpg";
+import aboutUs1 from "../../../public/images/aboutus-1.avif";
+import aboutUs2 from "../../../public/images/aboutus-2.avif";
+import aboutUs3 from "../../../public/images/aboutus-3.avif";
+import aboutUs4 from "../../../public/images/aboutus-4.avif";
+import aboutUs5 from "../../../public/images/aboutus-5.avif";
+import aboutUs6 from "../../../public/images/aboutus-6.avif";
+import aboutUs7 from "../../../public/images/aboutus-7.avif";
 import styles from "./AboutUs.module.css";
 
 export const AboutUs = () => {

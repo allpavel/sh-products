@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "../Button/Button";
-import angar1 from "../../../public/images/prod1.jpg";
-import angar2 from "../../../public/images/prod2.jpg";
-import angar3 from "../../../public/images/prod3.jpg";
-import angar4 from "../../../public/images/prod4.jpg";
-import angar5 from "../../../public/images/prod5.jpg";
+import angar1 from "../../../public/images/prod1.avif";
+import angar2 from "../../../public/images/prod2.avif";
+import angar3 from "../../../public/images/prod3.avif";
+import angar4 from "../../../public/images/prod4.avif";
+import angar5 from "../../../public/images/prod5.avif";
 import styles from "../BuildSection/BuildSection.module.css";
 
 export const ProductSection = () => {
@@ -16,6 +16,7 @@ export const ProductSection = () => {
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
+        <h2 className={`${styles.title} ${styles.upperCase}`}>Производим:</h2>
         <div className={styles.buttonGroup}>
           <Button
             text="Бороны"
@@ -61,7 +62,7 @@ export const ProductSection = () => {
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Бороны</h2>
+              <h3 className={styles.title}>Бороны</h3>
             </div>
             <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
             <form className={styles.form}>
@@ -108,7 +109,7 @@ export const ProductSection = () => {
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Опрыскиватели</h2>
+              <h3 className={styles.title}>Опрыскиватели</h3>
             </div>
             <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
             <form className={styles.form}>
@@ -148,7 +149,7 @@ export const ProductSection = () => {
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Разбрасыватели удобрений</h2>
+              <h3 className={styles.title}>Разбрасыватели удобрений</h3>
             </div>
             <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
             <form className={styles.form}>
@@ -191,7 +192,7 @@ export const ProductSection = () => {
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Прочая сельхозтехника</h2>
+              <h3 className={styles.title}>Прочая сельхозтехника</h3>
             </div>
             <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
             <form className={styles.form}>
@@ -239,7 +240,7 @@ export const ProductSection = () => {
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Запчасти и комплектующие</h2>
+              <h3 className={styles.title}>Запчасти и комплектующие</h3>
             </div>
             <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
             <form className={styles.form}>

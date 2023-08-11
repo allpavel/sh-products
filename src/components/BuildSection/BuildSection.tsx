@@ -7,11 +7,11 @@ import { MdOutlineConstruction } from "react-icons/md";
 import { FaTemperatureHigh, FaFaucet } from "react-icons/fa";
 import { TbAirConditioning, TbWall } from "react-icons/tb";
 import { Button } from "../Button/Button";
-import angar1 from "../../../public/images/build-angar1.jpg";
-import angar2 from "../../../public/images/build-angar2.jpg";
-import angar3 from "../../../public/images/build-angar3.jpg";
-import angar4 from "../../../public/images/build-angar4.jpg";
-import angar5 from "../../../public/images/build-angar5.jpg";
+import angar1 from "../../../public/images/build-angar1.avif";
+import angar2 from "../../../public/images/build-angar2.avif";
+import angar3 from "../../../public/images/build-angar3.avif";
+import angar4 from "../../../public/images/build-angar4.avif";
+import angar5 from "../../../public/images/build-angar5.avif";
 import styles from "./BuildSection.module.css";
 
 export const BuildSection = () => {
@@ -20,6 +20,7 @@ export const BuildSection = () => {
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
+        <h2 className={`${styles.title} ${styles.upperCase}`}>Строим:</h2>
         <div className={styles.buttonGroup}>
           <Button
             text="Ангары бескаркасные"
@@ -63,14 +64,14 @@ export const BuildSection = () => {
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Ангары бескаркасные</h2>
+              <h3 className={styles.title}>Ангары бескаркасные</h3>
             </div>
             <div className={styles.links}>
               <div className={styles.linksBlock}>
                 <Link href="#" className={styles.link}>
                   Бескаркасные ангары-свинарники
                 </Link>
-                <Link href="#" className={styles.link}>
+                <Link href="/angars/angary-beskarkasnye/beskarkasnye-zernohranilisha" className={styles.link}>
                   Бескаркасные зернохранилища
                 </Link>
                 <Link href="#" className={styles.link}>
@@ -81,16 +82,16 @@ export const BuildSection = () => {
                 </Link>
               </div>
               <div className={styles.linksBlock}>
-                <Link href="#" className={styles.link}>
+                <Link href="#/angars/angary-beskarkasnye/beskarkasnye-navesy" className={styles.link}>
                   Бескаркасные навесы
                 </Link>
-                <Link href="#" className={styles.link}>
+                <Link href="/angars/angary-beskarkasnye/beskarkasnye-ovoshehranilisha" className={styles.link}>
                   Бескаркасные овощехранилища
                 </Link>
                 <Link href="#" className={styles.link}>
                   Ангары для животноводства
                 </Link>
-                <Link href="#" className={styles.link}>
+                <Link href="/angars/angary-beskarkasnye/aviaczionnye-angary" className={styles.link}>
                   Авиационные ангары
                 </Link>
               </div>
@@ -145,14 +146,14 @@ export const BuildSection = () => {
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Каркасные ангары</h2>
+              <h3 className={styles.title}>Каркасные ангары</h3>
             </div>
             <div className={styles.links}>
               <div className={styles.linksBlock}>
-                <Link href="#" className={styles.link}>
+                <Link href="/angars/karkasnye-angary/karkasnye-angary" className={styles.link}>
                   Каркасные ангары
                 </Link>
-                <Link href="#" className={styles.link}>
+                <Link href="/angars/karkasnye-angary/toka-karkasanye-navesy" className={styles.link}>
                   Тока, каркасные навесы
                 </Link>
                 <Link href="#" className={styles.link}>
@@ -162,9 +163,6 @@ export const BuildSection = () => {
               <div className={styles.linksBlock}>
                 <Link href="#" className={styles.link}>
                   Автомойки и автосервисы
-                </Link>
-                <Link href="#" className={styles.link}>
-                  Магазины
                 </Link>
                 <Link href="#" className={styles.link}>
                   Магазины
@@ -223,7 +221,7 @@ export const BuildSection = () => {
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Тентовые ангары</h2>
+              <h3 className={styles.title}>Тентовые ангары</h3>
             </div>
             <div className={styles.icons}>
               <div className={styles.iconWrapper}>
@@ -268,12 +266,14 @@ export const BuildSection = () => {
         </article>
         <article className={`${styles.content} ${activeTab === "repair" ? "" : styles.dBlock}`}>
           <div className={styles.image}>
-            <Image src={angar4} alt="Гибка листового металла" className={styles.image} />
+            <Image src={angar5} alt="Кран строит крышу ангара" className={styles.image} />
           </div>
+
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Изготовление металлоконструкций</h2>
+              <h3 className={styles.title}>Ремонт и реконструкция ангаров</h3>
             </div>
+
             <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
             <form className={styles.form}>
               <p className={styles.callToAction}>Получить расчёт:</p>
@@ -308,11 +308,11 @@ export const BuildSection = () => {
         </article>
         <article className={`${styles.content} ${activeTab === "metal" ? "" : styles.dBlock}`}>
           <div className={styles.image}>
-            <Image src={angar5} alt="Кран строит крышу ангара" className={styles.image} />
+            <Image src={angar4} alt="Гибка листового металла" className={styles.image} />
           </div>
           <div className={styles.desc}>
             <div>
-              <h2 className={styles.title}>Ремонт и реконструкция ангаров</h2>
+              <h3 className={styles.title}>Изготовление металлоконструкций</h3>
             </div>
             <p className={styles.price}>Цена рассчитывается индивидуально по согласованному техническому заданию</p>
             <form className={styles.form}>
