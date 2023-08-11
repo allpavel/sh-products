@@ -7,11 +7,11 @@ import { MdOutlineConstruction } from "react-icons/md";
 import { FaTemperatureHigh, FaFaucet } from "react-icons/fa";
 import { TbAirConditioning, TbWall } from "react-icons/tb";
 import { Button } from "../Button/Button";
-import angar1 from "../../../public/images/build-angar1.jpg";
-import angar2 from "../../../public/images/build-angar2.jpg";
-import angar3 from "../../../public/images/build-angar3.jpg";
-import angar4 from "../../../public/images/build-angar4.jpg";
-import angar5 from "../../../public/images/build-angar5.jpg";
+import angar1 from "../../../public/images/build-angar1.avif";
+import angar2 from "../../../public/images/build-angar2.avif";
+import angar3 from "../../../public/images/build-angar3.avif";
+import angar4 from "../../../public/images/build-angar4.avif";
+import angar5 from "../../../public/images/build-angar5.avif";
 import styles from "./BuildSection.module.css";
 
 export const BuildSection = () => {

@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "../Button/Button";
-import angar1 from "../../../public/images/prod1.jpg";
-import angar2 from "../../../public/images/prod2.jpg";
-import angar3 from "../../../public/images/prod3.jpg";
-import angar4 from "../../../public/images/prod4.jpg";
-import angar5 from "../../../public/images/prod5.jpg";
+import angar1 from "../../../public/images/prod1.avif";
+import angar2 from "../../../public/images/prod2.avif";
+import angar3 from "../../../public/images/prod3.avif";
+import angar4 from "../../../public/images/prod4.avif";
+import angar5 from "../../../public/images/prod5.avif";
 import styles from "../BuildSection/BuildSection.module.css";
 
 export const ProductSection = () => {
