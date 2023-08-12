@@ -4,6 +4,12 @@ import { AngarsContent } from "@/components/Pages/Angars/AngarsContent/AngarsCon
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ангары АГРО-ТЕХ",
+  description: "Строительство ангаров, быстровозводимых металлических сооружений",
+};
 
 export default async function Angars() {
   const cards: CardsSchema = await getData(

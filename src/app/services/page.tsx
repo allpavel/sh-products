@@ -4,6 +4,12 @@ import { ServicesContent } from "@/components/Pages/Services/ServicesContent/Ser
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Услуги АГРО-ТЕХ",
+  description: "Производственные услуги по изготовлению деталей по чертежам",
+};
 
 export default async function Services() {
   const cards: CardsSchema = await getData(

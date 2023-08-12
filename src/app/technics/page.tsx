@@ -4,6 +4,12 @@ import { TechnicsContent } from "@/components/Pages/Technics/TechnicsContent/Tec
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Сельхозтехника АГРО-ТЕХ",
+  description: "Производим оборудование и машины, которые пользуются неизменно высоким спросом у сельхозпроизводителей",
+};
 
 export default async function Technics() {
   const cards: CardsSchema = await getData(

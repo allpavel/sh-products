@@ -4,6 +4,12 @@ import { ProductSection } from "@/components/ProductSection/ProductSection";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { AboutUs } from "@/components/AboutUs/AboutUs";
 import { Benefits } from "@/components/Benefits/Benefits";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "АГРО-ТЕХ — Ангары и сельхозтехника от производителя",
+  description: "Производство сельскохозяйственной техники и строительство ангаров",
+};
 
 export default function Home() {
   return (

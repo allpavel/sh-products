@@ -3,6 +3,12 @@ import { Cards } from "@/components/Cards/Cards";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Запчасти АГРО-ТЕХ",
+  description: "Запчасти и комплектующие на сельхозтехнику",
+};
 
 export default async function Spares() {
   const cards: CardsSchema = await getData(
