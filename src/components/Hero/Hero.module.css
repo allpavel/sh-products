@@ -4,15 +4,7 @@
   background-repeat: no-repeat;
 }
 
-.container[data-subCategory="technics"] {
-  background-image: url("../../../public/images/technics.webp");
-
-  @supports (background-image: url("../../../public/images/technics.avif")) {
-    background-image: url("../../../public/images/technics.avif");
-  }
-}
-
-.container[data-subCategory="angars"] {
+.container[data-subcategory="angars"] {
   background-image: url("../../../public/images/hero-angar.webp");
 
   @supports (background-image: url("../../../public/images/hero-angar.avif")) {
@@ -20,7 +12,23 @@
   }
 }
 
-.container[data-subCategory="angary-beskarkasnye"] {
+.container[data-subcategory="technics"] {
+  background-image: url("../../../public/images/technics.webp");
+
+  @supports (background-image: url("../../../public/images/technics.avif")) {
+    background-image: url("../../../public/images/technics.avif");
+  }
+}
+
+.container[data-subcategory="spares"] {
+  background-image: url("../../../public/images/spare1.webp");
+
+  @supports (background-image: url("../../../public/images/spare1.avif")) {
+    background-image: url("../../../public/images/spare1.avif");
+  }
+}
+
+.container[data-subcategory="angary-beskarkasnye"] {
   background-image: url("../../../public/images/subCategoryCovers/angars/angar-1.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/angars/angar-1.avif")) {
@@ -28,7 +36,7 @@
   }
 }
 
-.container[data-subCategory="karkasnye-angary"] {
+.container[data-subcategory="karkasnye-angary"] {
   background-image: url("../../../public/images/subCategoryCovers/angars/angar-2.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/angars/angar-2.avif")) {
@@ -36,7 +44,7 @@
   }
 }
 
-.container[data-subCategory="remont-i-rekonstrukcziya"] {
+.container[data-subcategory="remont-i-rekonstrukcziya"] {
   background-image: url("../../../public/images/subCategoryCovers/angars/angar-3.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/angars/angar-3.avif")) {
@@ -44,7 +52,7 @@
   }
 }
 
-.container[data-subCategory="tentovye-angary"] {
+.container[data-subcategory="tentovye-angary"] {
   background-image: url("../../../public/images/subCategoryCovers/angars/angar-4.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/angars/angar-4.avif")) {
@@ -52,7 +60,7 @@
   }
 }
 
-.container[data-subCategory="borony"] {
+.container[data-subcategory="borony"] {
   background-image: url("../../../public/images/subCategoryCovers/tech/tech-1.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-1.avif")) {
@@ -60,7 +68,7 @@
   }
 }
 
-.container[data-subCategory="modernizirovannyj-uaz"] {
+.container[data-subcategory="modernizirovannyj-uaz"] {
   background-image: url("../../../public/images/subCategoryCovers/tech/tech-2.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-2.avif")) {
@@ -68,7 +76,7 @@
   }
 }
 
-.container[data-subCategory="opryskivateli"] {
+.container[data-subcategory="opryskivateli"] {
   background-image: url("../../../public/images/subCategoryCovers/tech/tech-3.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-3.avif")) {
@@ -76,7 +84,7 @@
   }
 }
 
-.container[data-subCategory="podvoz-zhidkosti"] {
+.container[data-subcategory="podvoz-zhidkosti"] {
   background-image: url("../../../public/images/subCategoryCovers/tech/tech-4.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-4.avif")) {
@@ -84,7 +92,7 @@
   }
 }
 
-.container[data-subCategory="prochaya-selhoztehnika"] {
+.container[data-subcategory="prochaya-selhoztehnika"] {
   background-image: url("../../../public/images/subCategoryCovers/tech/tech-5.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-5.avif")) {
@@ -92,7 +100,7 @@
   }
 }
 
-.container[data-subCategory="razbrasyvateli-udobrenij"] {
+.container[data-subcategory="razbrasyvateli-udobrenij"] {
   background-image: url("../../../public/images/subCategoryCovers/tech/tech-6.webp");
 
   @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-6.avif")) {

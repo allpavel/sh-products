@@ -12,7 +12,7 @@ interface Props {
 
 export const Hero = ({ page, data }: Props) => {
   return (
-    <section className={styles.container} data-subCategory={page}>
+    <section className={styles.container} data-subcategory={page}>
       <div className={styles.filter}>
         <div className={styles.wrapper}>
           <div className={styles.content}>

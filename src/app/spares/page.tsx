@@ -16,7 +16,7 @@ export default async function Spares() {
   );
   return (
     <>
-      <Hero />
+      <Hero page="spares" data={cards.data[0].attributes.categoryId.data.attributes} />
       <Cards cards={cards} pathname="/spares" title="Запчасти и комплектующие" />
       <CallToAction />
     </>
