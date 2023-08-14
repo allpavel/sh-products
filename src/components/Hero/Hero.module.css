@@ -28,6 +28,14 @@
   }
 }
 
+.container[data-subcategory="services"] {
+  background-image: url("../../../public/images/services.webp");
+
+  @supports (background-image: url("../../../public/images/services.avif")) {
+    background-image: url("../../../public/images/services.avif");
+  }
+}
+
 .container[data-subcategory="angary-beskarkasnye"] {
   background-image: url("../../../public/images/subCategoryCovers/angars/angar-1.webp");
 
