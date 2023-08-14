@@ -27,6 +27,14 @@ export interface Card {
         };
       };
     };
+    categoryId: {
+      data: {
+        attributes: {
+          metaDescription: string;
+          heroDescription: string;
+        };
+      };
+    };
     price?: string;
     slug: string;
   };

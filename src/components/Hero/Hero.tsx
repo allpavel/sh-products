@@ -1,11 +1,10 @@
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Button } from "../Button/Button";
-import styles from "./HeroTemp.module.css";
+import styles from "./Hero.module.css";
 
 interface Props {
   page: string;
   data: {
-    title: string;
     metaDescription: string;
     heroDescription: string;
   };

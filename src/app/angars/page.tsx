@@ -1,10 +1,10 @@
-import { AngarsHero } from "@/components/Pages/Angars/AngarsHero/AngarsHero";
+import { Hero } from "@/components/Hero/Hero";
 import { Cards } from "@/components/Cards/Cards";
 import { AngarsContent } from "@/components/Pages/Angars/AngarsContent/AngarsContent";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
-import { CardsSchema } from "@/types/types";
 import type { Metadata } from "next";
+import { CardsSchema } from "@/types/types";
 
 export const metadata: Metadata = {
   title: "Ангары АГРО-ТЕХ",
@@ -17,7 +17,7 @@ export default async function Angars() {
   );
   return (
     <>
-      <AngarsHero />
+      <Hero page="angars" data={cards.data[0].attributes.categoryId.data.attributes} />
       <Cards cards={cards} title="Ангары" pathname="/angars" scrollToTop={false} />
       <AngarsContent />
       <CallToAction />

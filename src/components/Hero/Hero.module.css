@@ -4,6 +4,14 @@
   background-repeat: no-repeat;
 }
 
+.container[data-subCategory="angars"] {
+  background-image: url("../../../public/images/hero-angar.webp");
+
+  @supports (background-image: url("../../../public/images/hero-angar.avif")) {
+    background-image: url("../../../public/images/hero-angar.avif");
+  }
+}
+
 .container[data-subCategory="angary-beskarkasnye"] {
   background-image: url("../../../public/images/subCategoryCovers/angars/angar-1.webp");
 
