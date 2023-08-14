@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { MdOutlineConstruction } from "react-icons/md";
 import { FaTemperatureHigh } from "react-icons/fa";
 import { TbAirConditioning } from "react-icons/tb";
 import { Button } from "@/components/Button/Button";
 import { ImageGallery } from "@/components/ImageGallery/ImageGallery";
+import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 import { getData } from "@/utils/getData";
 import { CardPage } from "@/types/types";
 import styles from "./AngarsCardPage.module.css";
@@ -20,21 +20,7 @@ export default async function AngarsCardPage({ params }: { params: { slug: strin
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <nav className={styles.breadcrumbs}>
-          <Link href="/" className={styles.link}>
-            Главная
-          </Link>
-          <span className={styles.divider}>/</span>
-          <Link href="/angars" className={styles.link}>
-            {data.attributes.category}
-          </Link>
-          <span className={styles.divider}>/</span>
-          <Link href={`/angars/${data.attributes.sub_category.data.attributes.slug}`} className={styles.link}>
-            {data.attributes.sub_category.data.attributes.title}
-          </Link>
-          <span className={styles.divider}>/</span>
-          <span className={styles.currentPage}>{data.attributes.title}</span>
-        </nav>
+        <Breadcrumbs card={data} />
         <h1 className={styles.title}>{data.attributes.title}</h1>
         <article className={styles.content}>
           <div className={styles.imageContainer}>

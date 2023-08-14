@@ -1,49 +1,18 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Button } from "@/components/Button/Button";
 import { getData } from "@/utils/getData";
+import { ServiceCard } from "@/types/types";
 import styles from "./Spare.module.css";
-
-interface Card {
-  data: {
-    attributes: {
-      id: number;
-      description: string;
-      cover: {
-        data: {
-          attributes: {
-            alternativeText: string;
-            url: string;
-          };
-        };
-      };
-      price: string;
-      title: string;
-      category: string;
-      subCategory: string;
-      slug: string;
-    };
-  };
-}
+import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 
 export default async function SpareCardPage({ params }: { params: { slug: string } }) {
-  const { data }: Card = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/spares/${params.slug}`);
+  const { data }: ServiceCard = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/spares/${params.slug}`);
 
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <nav className={styles.breadcrumbs}>
-          <Link href="/" className={styles.link}>
-            Главная
-          </Link>
-          <span className={styles.divider}>/</span>
-          <Link href="/spares" className={styles.link}>
-            {data.attributes.category}
-          </Link>
-          <span className={styles.divider}>/</span>
-          <span className={styles.currentPage}>{data.attributes.title}</span>
-        </nav>
+        <Breadcrumbs card={data} />
         <h1 className={styles.title}>{data.attributes.title}</h1>
         <article className={styles.content}>
           <div className={styles.imageContainer}>
