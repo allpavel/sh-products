@@ -1,4 +1,5 @@
 import { AngarsHero } from "@/components/Pages/Angars/AngarsHero/AngarsHero";
+import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 import { Cards } from "@/components/Cards/Cards";
 import { AngarsContent } from "@/components/Pages/Angars/AngarsContent/AngarsContent";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
@@ -12,6 +13,7 @@ export default async function AngarCards({ params }: { params: { sub_category: s
   return (
     <>
       <AngarsHero />
+      <Breadcrumbs card={cards.data[0]} />
       <Cards
         cards={cards}
         title={cards.data[0].attributes.sub_category.data.attributes.title}

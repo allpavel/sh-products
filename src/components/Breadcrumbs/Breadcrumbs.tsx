@@ -1,32 +1,68 @@
+"use client";
+
 import Link from "next/link";
-import { CardsSchema } from "@/types/types";
+import { usePathname } from "next/navigation";
 import styles from "./Breadcrumbs.module.css";
 
-interface CardProps {
-  cards: CardsSchema;
-  title: string;
-  pathname: string;
-  scrollToTop?: boolean;
+interface Props {
+  attributes: {
+    title: string;
+    category: string;
+    sub_category: {
+      data: {
+        attributes: {
+          title: string;
+        };
+      };
+    };
+  };
 }
 
-export const Breadcrumbs = ({ cards, title }: CardProps) => {
+export const Breadcrumbs = ({ card }: { card: Props }) => {
+  const pathname = usePathname();
+  const pathSegments = pathname.slice(1).split("/");
+
+  if (pathSegments.length === 2) {
+    return (
+      <nav className={styles.container} aria-label="breadcrumb">
+        <div className={styles.wrapper}>
+          <div className={styles.breadcrumbs}>
+            <Link href="/" className={styles.link}>
+              Главная
+            </Link>
+            <span className={styles.divider}>/</span>
+            <Link href={`/${pathSegments[0]}`} className={styles.link}>
+              {card.attributes.category}
+            </Link>
+            <span className={styles.divider}>/</span>
+            <span className={styles.currentPage} aria-current="page">
+              {card.attributes.title}
+            </span>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+
   return (
-    <nav className={styles.container}>
+    <nav className={styles.container} aria-label="breadcrumb">
       <div className={styles.wrapper}>
         <div className={styles.breadcrumbs}>
           <Link href="/" className={styles.link}>
             Главная
           </Link>
           <span className={styles.divider}>/</span>
-          <Link href="/angars" className={styles.link}>
-            {cards.data[0].attributes.category}
+          <Link href={`/${pathSegments[0]}`} className={styles.link}>
+            {card.attributes.category}
           </Link>
           <span className={styles.divider}>/</span>
-          <Link href={`/angars/${cards.data[0].attributes.sub_category.data.attributes.slug}`} className={styles.link}>
-            {cards.data[0].attributes.sub_category.data.attributes.title}
+          <Link href={`/${pathSegments[0]}/${pathSegments[1]}`} className={styles.link}>
+            {card.attributes.sub_category.data.attributes.title}
           </Link>
           <span className={styles.divider}>/</span>
-          <span className={styles.currentPage}>{cards.data[0].attributes.title}</span>
+          <span className={styles.currentPage} aria-current="page">
+            {card.attributes.title}
+          </span>
         </div>
       </div>
     </nav>

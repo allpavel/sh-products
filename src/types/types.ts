@@ -46,6 +46,7 @@ export interface CardPage {
   data: {
     id: number;
     attributes: {
+      title: string;
       shortDescription: string;
       description: string;
       cover: {
@@ -57,7 +58,6 @@ export interface CardPage {
         };
       };
       price: string;
-      title: string;
       category: string;
       slug: string;
       sub_category: {
@@ -80,4 +80,32 @@ export interface CardPage {
       };
     };
   }[];
+}
+
+export interface ServiceCard {
+  data: {
+    attributes: {
+      id: number;
+      description: string;
+      cover: {
+        data: {
+          attributes: {
+            alternativeText: string;
+            url: string;
+          };
+        };
+      };
+      price: string;
+      title: string;
+      category: string;
+      slug: string;
+      sub_category: {
+        data: {
+          attributes: {
+            title: string;
+          };
+        };
+      };
+    };
+  };
 }
