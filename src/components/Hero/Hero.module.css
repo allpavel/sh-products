@@ -1,7 +1,15 @@
 .container {
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.container[data-subCategory="technics"] {
+  background-image: url("../../../public/images/technics.webp");
+
+  @supports (background-image: url("../../../public/images/technics.avif")) {
+    background-image: url("../../../public/images/technics.avif");
+  }
 }
 
 .container[data-subCategory="angars"] {
@@ -44,6 +52,54 @@
   }
 }
 
+.container[data-subCategory="borony"] {
+  background-image: url("../../../public/images/subCategoryCovers/tech/tech-1.webp");
+
+  @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-1.avif")) {
+    background-image: url("../../../public/images/subCategoryCovers/tech/tech-1.avif");
+  }
+}
+
+.container[data-subCategory="modernizirovannyj-uaz"] {
+  background-image: url("../../../public/images/subCategoryCovers/tech/tech-2.webp");
+
+  @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-2.avif")) {
+    background-image: url("../../../public/images/subCategoryCovers/tech/tech-2.avif");
+  }
+}
+
+.container[data-subCategory="opryskivateli"] {
+  background-image: url("../../../public/images/subCategoryCovers/tech/tech-3.webp");
+
+  @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-3.avif")) {
+    background-image: url("../../../public/images/subCategoryCovers/tech/tech-3.avif");
+  }
+}
+
+.container[data-subCategory="podvoz-zhidkosti"] {
+  background-image: url("../../../public/images/subCategoryCovers/tech/tech-4.webp");
+
+  @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-4.avif")) {
+    background-image: url("../../../public/images/subCategoryCovers/tech/tech-4.avif");
+  }
+}
+
+.container[data-subCategory="prochaya-selhoztehnika"] {
+  background-image: url("../../../public/images/subCategoryCovers/tech/tech-5.webp");
+
+  @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-5.avif")) {
+    background-image: url("../../../public/images/subCategoryCovers/tech/tech-5.avif");
+  }
+}
+
+.container[data-subCategory="razbrasyvateli-udobrenij"] {
+  background-image: url("../../../public/images/subCategoryCovers/tech/tech-6.webp");
+
+  @supports (background-image: url("../../../public/images/subCategoryCovers/tech/tech-6.avif")) {
+    background-image: url("../../../public/images/subCategoryCovers/tech/tech-6.avif");
+  }
+}
+
 .filter {
   height: 100%;
   width: 100%;
@@ -53,7 +109,7 @@
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 50px;
+  padding: 70px 12px;
 }
 
 .content {
