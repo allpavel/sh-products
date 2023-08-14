@@ -1,5 +1,6 @@
 .container {
-  background-size: 100% 100%;
+  background-size: 100%;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -44,7 +45,7 @@
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 115px 12px;
+  padding: 50px;
 }
 
 .content {
@@ -53,32 +54,32 @@
 }
 
 .title {
-  font-size: 38px;
-  line-height: 58px;
+  font-size: 30px;
+  line-height: 1.5;
   font-weight: 500;
   text-transform: uppercase;
   color: #fff;
 }
 
-.desc {
+.content p {
   font-size: 24px;
   margin: 24px 0;
 }
 
-.list {
+.content ul {
   list-style: none;
   margin-top: 29px;
   margin-bottom: 29px;
 }
 
-.list li {
+.content ul li {
   font-size: 24px;
   padding-left: 30px;
   position: relative;
   line-height: 29px;
 }
 
-.list li::before {
+.content ul li::before {
   content: "";
   position: absolute;
   top: 8px;
@@ -131,17 +132,21 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    background-size: 100% 100%;
+  }
+
   .title {
     font-size: 28px;
     line-height: normal;
     text-align: center;
   }
-  .desc {
+  .content p {
     font-size: 20px;
     text-align: center;
   }
 
-  .list li {
+  .content ul li {
     font-size: 20px;
     padding-left: 20px;
   }
@@ -161,23 +166,23 @@
     line-height: normal;
     text-align: center;
   }
-  .desc {
+  .content p {
     font-size: 16px;
     text-align: center;
     margin: 12px 0;
   }
 
-  .list {
+  .content ul {
     margin-top: 15px;
     margin-bottom: 15px;
   }
 
-  .list li {
+  .content ul li {
     font-size: 16px;
     padding-left: 15px;
     line-height: 20px;
   }
-  .list li::before {
+  .content ul li::before {
     top: 7px;
     left: 0;
     width: 10px;

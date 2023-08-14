@@ -13,7 +13,7 @@ export default async function AngarCards({ params }: { params: { sub_category: s
   );
   return (
     <>
-      <HeroTemp page={params.sub_category} />
+      <HeroTemp page={params.sub_category} data={cards.data[0].attributes.sub_category.data.attributes} />
       {/* <AngarsHero /> */}
       <Breadcrumbs card={cards.data[0]} />
       <Cards
