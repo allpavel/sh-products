@@ -22,6 +22,16 @@ export interface Card {
         attributes: {
           title: string;
           slug: string;
+          metaDescription: string;
+          heroDescription: string;
+        };
+      };
+    };
+    categoryId: {
+      data: {
+        attributes: {
+          metaDescription: string;
+          heroDescription: string;
         };
       };
     };

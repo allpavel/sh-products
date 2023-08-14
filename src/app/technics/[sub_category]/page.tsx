@@ -1,10 +1,10 @@
-import { TechnicsHero } from "@/components/Pages/Technics/TechnicsHero/TechnicsHero";
 import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 import { Cards } from "@/components/Cards/Cards";
 import { TechnicsContent } from "@/components/Pages/Technics/TechnicsContent/TechnicsContent";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
+import { Hero } from "@/components/Hero/Hero";
 
 export default async function TechnicsCards({ params }: { params: { sub_category: string } }) {
   const cards: CardsSchema = await getData(
@@ -12,7 +12,7 @@ export default async function TechnicsCards({ params }: { params: { sub_category
   );
   return (
     <>
-      <TechnicsHero />
+      <Hero page={params.sub_category} data={cards.data[0].attributes.sub_category.data.attributes} />
       <Breadcrumbs card={cards.data[0]} />
       <Cards
         cards={cards}

@@ -1,20 +1,23 @@
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Button } from "../Button/Button";
 import styles from "./Hero.module.css";
 
-export const Hero = () => {
+interface Props {
+  page: string;
+  data: {
+    metaDescription: string;
+    heroDescription: string;
+  };
+}
+
+export const Hero = ({ page, data }: Props) => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} data-subcategory={page}>
       <div className={styles.filter}>
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Производство сельскохозяйственной техники и строительство ангаров</h1>
-            <p className={styles.desc}>(Ангары, Бороны, Опрыскиватели, Сельхозтехника, Запчасти)</p>
-            <ul className={styles.list}>
-              <li>Опрыскиватели, бороны, разбрасыватели удобрений</li>
-              <li>
-                Каркасные и бескаркасные арочные сооружения для различных отраслей промышленности и сельского хозяйства
-              </li>
-            </ul>
+            <h1 className={styles.title}>{data.metaDescription}</h1>
+            <ReactMarkdown>{data.heroDescription}</ReactMarkdown>
             <form className={styles.form}>
               <label className={styles.label} htmlFor="tel">
                 Ваш телефон <span className={styles.asterisk}>*</span>

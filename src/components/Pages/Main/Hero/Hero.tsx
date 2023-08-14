@@ -1,21 +1,20 @@
 import { Button } from "@/components/Button/Button";
-import styles from "./TechnicsHero.module.css";
+import styles from "./Hero.module.css";
 
-export const TechnicsHero = () => {
+export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.filter}>
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Производство сельхозтехники</h1>
-            <p className={styles.desc}>
-              Производим оборудование и машины, которые пользуются неизменно высоким спросом у сельхозпроизводителей
-            </p>
+            <h1 className={styles.title}>Производство сельскохозяйственной техники и строительство ангаров</h1>
+            <p className={styles.desc}>(Ангары, Бороны, Опрыскиватели, Сельхозтехника, Запчасти)</p>
             <ul className={styles.list}>
-              <li>Бороны, разбрасыватели удобрений, опрыскиватели</li>
-              <li>Модернизированный УАЗ, подвоз жидкости, ЖКУ, КАЗ и прочая техника</li>
+              <li>Опрыскиватели, бороны, разбрасыватели удобрений</li>
+              <li>
+                Каркасные и бескаркасные арочные сооружения для различных отраслей промышленности и сельского хозяйства
+              </li>
             </ul>
-            <p className={styles.title}>Получить консультацию:</p>
             <form className={styles.form}>
               <label className={styles.label} htmlFor="tel">
                 Ваш телефон <span className={styles.asterisk}>*</span>

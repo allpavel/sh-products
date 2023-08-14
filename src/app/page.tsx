@@ -1,4 +1,4 @@
-import { Hero } from "@/components/Hero/Hero";
+import { Hero } from "@/components/Pages/Main/Hero/Hero";
 import { BuildSection } from "@/components/BuildSection/BuildSection";
 import { ProductSection } from "@/components/ProductSection/ProductSection";
 import { CallToAction } from "@/components/CallToAction/CallToAction";

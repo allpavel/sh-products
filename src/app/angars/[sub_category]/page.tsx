@@ -1,10 +1,10 @@
-import { AngarsHero } from "@/components/Pages/Angars/AngarsHero/AngarsHero";
 import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 import { Cards } from "@/components/Cards/Cards";
 import { AngarsContent } from "@/components/Pages/Angars/AngarsContent/AngarsContent";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
+import { Hero } from "@/components/Hero/Hero";
 
 export default async function AngarCards({ params }: { params: { sub_category: string } }) {
   const cards: CardsSchema = await getData(
@@ -12,7 +12,7 @@ export default async function AngarCards({ params }: { params: { sub_category: s
   );
   return (
     <>
-      <AngarsHero />
+      <Hero page={params.sub_category} data={cards.data[0].attributes.sub_category.data.attributes} />
       <Breadcrumbs card={cards.data[0]} />
       <Cards
         cards={cards}

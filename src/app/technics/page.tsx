@@ -1,10 +1,10 @@
-import { TechnicsHero } from "@/components/Pages/Technics/TechnicsHero/TechnicsHero";
 import { Cards } from "@/components/Cards/Cards";
 import { TechnicsContent } from "@/components/Pages/Technics/TechnicsContent/TechnicsContent";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
 import type { Metadata } from "next";
+import { Hero } from "@/components/Hero/Hero";
 
 export const metadata: Metadata = {
   title: "Сельхозтехника АГРО-ТЕХ",
@@ -17,7 +17,7 @@ export default async function Technics() {
   );
   return (
     <>
-      <TechnicsHero />
+      <Hero page="technics" data={cards.data[0].attributes.categoryId.data.attributes} />
       <Cards cards={cards} pathname="/technics" title="Сельхозтехника" />
       <TechnicsContent />
       <CallToAction />
