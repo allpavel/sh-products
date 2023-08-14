@@ -36,7 +36,7 @@ export const Breadcrumbs = ({ card }: { card: Props }) => {
             </Link>
             <span className={styles.divider}>/</span>
             <span className={styles.currentPage} aria-current="page">
-              {card.attributes.title}
+              {card.attributes.sub_category.data.attributes.title}
             </span>
           </div>
         </div>
