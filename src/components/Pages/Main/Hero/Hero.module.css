@@ -1,11 +1,10 @@
 .container {
-  background-image: url("../../../../../public/images/angars-2.webp");
-  background-size: cover;
-  background-position: center;
+  background-image: url("../../../../../public/images/hero-angar.webp");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 
-  @supports (background-image: url("../../../../../public/images/angars-2.avif")) {
-    background-image: url("../../../../../public/images/angars-2.avif");
+  @supports (background-image: url("../../../../../public/images/hero-angar.avif")) {
+    background-image: url("../../../../../public/images/hero-angar.avif");
   }
 }
 
@@ -18,7 +17,7 @@
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 12px;
+  padding: 115px 12px;
 }
 
 .content {
