@@ -1,41 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CardsLoader } from "../CardsLoader/CardsLoader";
+import { CardsSchema, Card } from "@/types/types";
 import styles from "./Cards.module.css";
-
-interface Card {
-  id: number;
-  attributes: {
-    title: string;
-    cover: {
-      data: {
-        attributes: {
-          alternativeText: string;
-          formats: {
-            thumbnail: {
-              url: string;
-            };
-          };
-          url: string;
-        };
-      };
-    };
-    price?: string;
-    slug: string;
-  };
-}
-
-interface CardsSchema {
-  data: Card[];
-  meta: {
-    pagination: {
-      page: number;
-      pageCount: number;
-      pageSize: number;
-      total: number;
-    };
-  };
-}
 
 interface CardProps {
   cards: CardsSchema;
@@ -60,6 +27,8 @@ export const Cards = async ({ cards, title, pathname, scrollToTop = true }: Card
                     width={278}
                     height={178}
                     className={styles.image}
+                    blurDataURL={card.attributes.base64}
+                    placeholder="blur"
                   />
                 </div>
                 <div className={styles.cardContent}>

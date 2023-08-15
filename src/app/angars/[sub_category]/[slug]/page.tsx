@@ -43,6 +43,8 @@ export default async function AngarsCardPage({ params }: { params: { slug: strin
               width={600}
               height={400}
               priority
+              placeholder="blur"
+              blurDataURL={data.attributes.base64}
               className={styles.image}
             />
           </div>
