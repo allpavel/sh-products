@@ -38,6 +38,7 @@ export interface Card {
     };
     price?: string;
     slug: string;
+    base64: string;
   };
 }
 
@@ -61,6 +62,7 @@ export interface CardPage {
       shortDescription: string;
       description: string;
       metaDescription: string;
+      base64: string;
       cover: {
         data: {
           attributes: {
