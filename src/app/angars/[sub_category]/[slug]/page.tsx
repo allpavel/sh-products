@@ -10,6 +10,19 @@ import { getData } from "@/utils/getData";
 import { CardPage } from "@/types/types";
 import styles from "./AngarsCardPage.module.css";
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const {
+    data: [data],
+  }: CardPage = await getData(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/angars/?filters[slug][$eq]=${params.slug}&populate=*`
+  );
+
+  return {
+    title: data.attributes.title,
+    description: data.attributes.metaDescription,
+  };
+}
+
 export default async function AngarsCardPage({ params }: { params: { slug: string } }) {
   const {
     data: [data],

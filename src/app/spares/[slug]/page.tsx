@@ -6,6 +6,15 @@ import { ServiceCard } from "@/types/types";
 import styles from "./Spare.module.css";
 import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { data }: ServiceCard = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/spares/${params.slug}`);
+
+  return {
+    title: data.attributes.title,
+    description: data.attributes.metaDescription,
+  };
+}
+
 export default async function SpareCardPage({ params }: { params: { slug: string } }) {
   const { data }: ServiceCard = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/spares/${params.slug}`);
 
