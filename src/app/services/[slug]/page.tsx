@@ -6,6 +6,15 @@ import { getData } from "@/utils/getData";
 import { ServiceCard } from "@/types/types";
 import styles from "./Services.module.css";
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { data }: ServiceCard = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/services/${params.slug}`);
+
+  return {
+    title: data.attributes.title,
+    description: data.attributes.metaDescription,
+  };
+}
+
 export default async function ServiceCardPage({ params }: { params: { slug: string } }) {
   const { data }: ServiceCard = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/services/${params.slug}`);
 

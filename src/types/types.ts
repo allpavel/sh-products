@@ -30,6 +30,7 @@ export interface Card {
     categoryId: {
       data: {
         attributes: {
+          title: string;
           metaDescription: string;
           heroDescription: string;
         };
@@ -59,6 +60,7 @@ export interface CardPage {
       title: string;
       shortDescription: string;
       description: string;
+      metaDescription: string;
       cover: {
         data: {
           attributes: {
@@ -109,6 +111,7 @@ export interface ServiceCard {
       title: string;
       category: string;
       slug: string;
+      metaDescription: string;
       sub_category: {
         data: {
           attributes: {
