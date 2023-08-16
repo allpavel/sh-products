@@ -1,8 +1,8 @@
-import styles from "./Benefits.module.css";
 import { BsShieldCheck, BsWalletFill } from "react-icons/bs";
 import { BiCog } from "react-icons/bi";
 import { FaUserCheck } from "react-icons/fa";
 import { MdOutlineEngineering, MdOutlineBuild } from "react-icons/md";
+import styles from "./Benefits.module.css";
 
 export const Benefits = () => {
   return (
