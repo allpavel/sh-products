@@ -7,6 +7,13 @@ import { getData } from "@/utils/getData";
 import { CardPage } from "@/types/types";
 import styles from "./TechCard.module.css";
 
+export async function generateStaticParams() {
+  const response: CardPage = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/technics?populate=*`);
+  return response.data.map((item) => ({
+    slug: item.attributes.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const {
     data: [data],

@@ -3,8 +3,15 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Button } from "@/components/Button/Button";
 import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 import { getData } from "@/utils/getData";
-import { ServiceCard } from "@/types/types";
+import { ServiceCard, CardPage } from "@/types/types";
 import styles from "./Services.module.css";
+
+export async function generateStaticParams() {
+  const response: CardPage = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/services?populate=*`);
+  return response.data.map((item) => ({
+    slug: item.attributes.slug,
+  }));
+}
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const { data }: ServiceCard = await getData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/services/${params.slug}`);
