@@ -5,37 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { LoadButton } from "@/components/LoadButton/LoadButton";
 import { getData } from "@/utils/getData";
+import { CardsSchema, Card } from "@/types/types";
 import styles from "./CardsLoader.module.css";
-
-interface Card {
-  id: number;
-  attributes: {
-    description: string;
-    cover: {
-      data: {
-        attributes: {
-          alternativeText: string;
-          url: string;
-        };
-      };
-    };
-    price: string;
-    title: string;
-    slug: string;
-  };
-}
-
-interface Cards {
-  data: Card[];
-  meta: {
-    pagination: {
-      page: number;
-      pageCount: number;
-      pageSize: number;
-      total: number;
-    };
-  };
-}
 
 interface Props {
   page: string;
@@ -47,7 +18,7 @@ export const CardsLoader = ({ page }: Props) => {
   const [pageCount, setPageCount] = useState(0);
 
   const handleIncreasePageIndex = async () => {
-    const response: Cards = await getData(
+    const response: CardsSchema = await getData(
       `${process.env.NEXT_PUBLIC_STRAPI_URL}/api${page}?populate=*&pagination[page]=${pageIndex}&pagination[pageSize]=${process.env.NEXT_PUBLIC_PAGE_SIZE}`
     );
     setCards((prev) => [...prev, ...response.data]);
@@ -59,7 +30,7 @@ export const CardsLoader = ({ page }: Props) => {
     <>
       <div className={styles.content}>
         {cards &&
-          cards.map((card: Card) => (
+          cards.map((card) => (
             <article className={styles.card} key={card.id}>
               <div className={styles.imageContainer}>
                 <Image
