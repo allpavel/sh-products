@@ -186,7 +186,6 @@ button.link {
     color: var(--secondary);
     background-color: transparent;
     border: none;
-    z-index: 100;
   }
 
   .contactsMenu svg {

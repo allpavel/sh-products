@@ -20,10 +20,10 @@
 
 .buttonGroup {
   display: grid;
-  grid-template-columns: repeat(5, 250px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: space-between;
   margin-bottom: 16px;
-  overflow-x: scroll;
+  gap: 10px;
 }
 
 .content {
