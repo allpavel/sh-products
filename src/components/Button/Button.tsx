@@ -5,11 +5,10 @@ type Icons = {
   [key: string]: () => JSX.Element;
 };
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   text: string;
   type: "green" | "red" | "outlineGreen" | "outlineRed";
   size: "large" | "medium";
-  onClick?: () => void;
   icon?: string;
   active?: boolean;
   disabled?: boolean;
@@ -19,10 +18,10 @@ const icons: Icons = {
   telegram: () => <BiLogoTelegram />,
 };
 
-export const Button = ({ text, type, size, icon, disabled = false, active = false, ...rest }: Props) => {
+export const Button = ({ text, type, size, icon, disabled = false, active = false, className: cn, ...rest }: Props) => {
   return (
     <button
-      className={`${styles[type]} ${styles[size]} ${styles.callToAction} ${active && styles.active} ${
+      className={`${cn} ${styles[type]} ${styles[size]} ${styles.callToAction} ${active && styles.active} ${
         disabled && styles.disabled
       }`}
       disabled={disabled}
