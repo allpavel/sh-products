@@ -4,36 +4,17 @@
 }
 
 .wrapper {
+  display: grid;
+  grid-template-columns: 300px;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 35px 12px 0;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
-}
-.icon {
-  background-color: transparent;
-}
-.contacts {
-  display: flex;
-  align-items: center;
-  margin-bottom: 14px;
+  padding: 35px 12px;
+  gap: 20px;
+  justify-content: center;
 }
 
-.contactsIcon {
-  margin-right: 12px;
-}
-
-.whatsAppIcon {
-  color: var(--tertiary);
-  width: 22px;
-  height: 22px;
-}
-
-.mailIcon {
-  color: var(--secondary);
-  width: 22px;
-  height: 22px;
+.contactsWrapper {
+  order: 4;
 }
 
 .phoneContainer {
@@ -53,6 +34,31 @@
   letter-spacing: 0.28px;
 }
 
+.contacts {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.icon {
+  background-color: transparent;
+}
+
+.contactsIcon {
+  margin-right: 12px;
+}
+
+.whatsAppIcon {
+  color: var(--tertiary);
+  width: 22px;
+  height: 22px;
+}
+
+.mailIcon {
+  color: var(--secondary);
+  width: 22px;
+  height: 22px;
+}
+
 .mailLink {
   font-size: 16px;
   font-weight: 400;
@@ -65,9 +71,25 @@
 .navLinks {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: space-evenly;
   list-style: none;
+}
+
+.link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 0.2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 0;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--link-hover);
 }
 
 .ourWorksContainer {
@@ -87,19 +109,6 @@
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
-}
-
-.link {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #fff;
-  letter-spacing: 0.2px;
-  padding: 10px 30px;
-  transition: color 0.3s ease;
-}
-
-.link:hover {
-  color: var(--link-hover);
 }
 
 .ourWorks li {
@@ -145,7 +154,7 @@
   gap: 14px;
 }
 
-@media (max-width: 1040px) {
+@media (min-width: 660px) {
   .wrapper {
     grid-template-columns: 300px 300px;
     gap: 40px;
@@ -156,28 +165,23 @@
   .contactsWrapper {
     order: 2;
   }
-}
-
-@media (max-width: 660px) {
-  .wrapper {
-    grid-template-columns: 300px;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .contactsWrapper {
-    order: 4;
-  }
 
   .navLinks {
-    align-items: start;
-  }
-
-  .navLinks li {
-    margin-bottom: 10px;
+    align-items: center;
   }
 
   .link {
-    padding-left: 0;
+    padding: 10px 30px;
+  }
+}
+
+@media (min-width: 1040px) {
+  .wrapper {
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .contactsWrapper {
+    order: unset;
   }
 }
