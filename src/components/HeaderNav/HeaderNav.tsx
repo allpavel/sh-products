@@ -27,6 +27,9 @@ export const HeaderNav = () => {
     setIsOurWorksMenuOpen(false);
     setIsMobileOpen(false);
   };
+  useEffect(() => {
+    setIsOurWorksMenuOpen(false);
+  }, []);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent): void => {
