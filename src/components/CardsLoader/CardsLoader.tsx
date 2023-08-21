@@ -1,36 +1,30 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LoadButton } from "@/components/LoadButton/LoadButton";
-import { getData } from "@/utils/getData";
-import { CardsSchema, Card } from "@/types/types";
+import { useCards } from "@/hooks/useCards";
+import { Card } from "@/types/types";
 import styles from "./CardsLoader.module.css";
 
 interface Props {
   page: string;
 }
 
-export const CardsLoader = ({ page }: Props) => {
-  const [cards, setCards] = useState<Card[]>([]);
-  const [pageIndex, setPageIndex] = useState(2);
-  const [pageCount, setPageCount] = useState(0);
+const queryClient = new QueryClient();
 
-  const handleIncreasePageIndex = async () => {
-    const response: CardsSchema = await getData(
-      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api${page}?populate=*&pagination[page]=${pageIndex}&pagination[pageSize]=${process.env.NEXT_PUBLIC_PAGE_SIZE}`
-    );
-    setCards((prev) => [...prev, ...response.data]);
-    setPageCount(response.meta.pagination.pageCount);
-    setPageIndex((prev) => prev + 1);
-  };
+const Loader = ({ page }: Props) => {
+  const { isFetching, hasNextPage, fetchNextPage, cards } = useCards(page);
+  const handleIncreasePageIndex = () => fetchNextPage();
+
+  if (isFetching) return <div>Loading...</div>;
 
   return (
     <>
       <div className={styles.content}>
         {cards &&
-          cards.map((card) => (
+          cards.map((card: Card) => (
             <article className={styles.card} key={card.id}>
               <div className={styles.imageContainer}>
                 <Image
@@ -49,7 +43,15 @@ export const CardsLoader = ({ page }: Props) => {
             </article>
           ))}
       </div>
-      <LoadButton increaseIndex={handleIncreasePageIndex} disable={!!(pageCount && pageIndex > pageCount)} />
+      <LoadButton increaseIndex={handleIncreasePageIndex} disable={hasNextPage === false} />
     </>
+  );
+};
+
+export const CardsLoader = ({ page }: Props) => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Loader page={page} />
+    </QueryClientProvider>
   );
 };

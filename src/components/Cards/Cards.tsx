@@ -28,7 +28,7 @@ export const Cards = async ({ cards, title, pathname, scrollToTop = true }: Card
                     height={178}
                     className={styles.image}
                     blurDataURL={card.attributes.base64}
-                    placeholder="blur"
+                    placeholder={card.attributes.base64 ? "blur" : "empty"}
                   />
                 </div>
                 <div className={styles.cardContent}>

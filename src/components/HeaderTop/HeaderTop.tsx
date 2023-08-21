@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect, useRef, memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { RiWhatsappFill } from "react-icons/ri";
@@ -10,9 +11,8 @@ import logo from "../../../public/images/logo.jpg";
 import angars from "../../../public/images/angars.jpg";
 import award from "../../../public/images/award.jpg";
 import styles from "./HeaderTop.module.css";
-import { useState, useEffect, useRef } from "react";
 
-export const HeaderTop = () => {
+const Top = ({ closeMenu }: { closeMenu: () => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -37,7 +37,7 @@ export const HeaderTop = () => {
   return (
     <div className={`${styles.container} ${montserrat.className}`}>
       <div>
-        <Link href="/" className={styles.logo}>
+        <Link href="/" className={styles.logo} onClick={closeMenu}>
           <Image src={logo} alt="Логотип Агро-Тех" width={106} height={67} className={styles.logoImage} />
           <Image
             src={angars}
@@ -81,3 +81,5 @@ export const HeaderTop = () => {
     </div>
   );
 };
+
+export const HeaderTop = memo(Top);
