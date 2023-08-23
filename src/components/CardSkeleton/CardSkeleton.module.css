@@ -1,21 +1,6 @@
 .wrapper {
-  max-width: 278px;
-  max-height: 297.5px;
-  padding: 0 12px;
-}
-
-.title {
-  height: 32px;
-  width: 70%;
-  background-color: var(--skeleton-element-gray);
-  border-radius: 10px;
-}
-
-.image {
-  width: 100%;
-  height: 178px;
-  background-color: var(--skeleton-element-gray);
-  border-radius: 10px 10px 0 0;
+  min-width: 278px;
+  min-height: 297.5px;
 }
 
 .card {
@@ -26,7 +11,6 @@
   min-height: 300px;
   border: 1px solid var(--skeleton-element-gray);
   border-radius: 10px;
-  transition: box-shadow 0.2s linear;
 }
 
 .cardContent {
@@ -39,14 +23,41 @@
   text-align: center;
 }
 
+.title {
+  height: 32px;
+  width: 70%;
+  background: linear-gradient(306deg, #bababa, #dedcdc, #ebebeb);
+  background-size: 600% 600%;
+  border-radius: 10px;
+  animation: AnimationName 2s ease infinite;
+}
+
 .price {
   height: 32px;
   width: 50%;
-  background-color: var(--skeleton-element-gray);
   border-radius: 10px;
+  background: linear-gradient(306deg, #bababa, #dedcdc, #ebebeb);
+  background-size: 600% 600%;
+  animation: AnimationName 2s ease infinite;
 }
 
-.card:hover {
-  cursor: pointer;
-  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 20px 0px;
+.image {
+  width: 100%;
+  height: 178px;
+  background: linear-gradient(306deg, #bababa, #dedcdc, #ebebeb);
+  background-size: 600% 600%;
+  border-radius: 10px 10px 0 0;
+  animation: AnimationName 2s ease infinite;
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
