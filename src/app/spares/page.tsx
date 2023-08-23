@@ -1,6 +1,8 @@
 import { Hero } from "@/components/Hero/Hero";
 import { Cards } from "@/components/Cards/Cards";
 import { CallToAction } from "@/components/CallToAction/CallToAction";
+import { CardSkeleton } from "@/components/CardSkeleton/CardSkeleton";
+import { SkeletonContainer } from "@/components/SkeletonContainer/SkeletonContainer";
 import { getData } from "@/utils/getData";
 import { CardsSchema } from "@/types/types";
 
@@ -22,6 +24,9 @@ export default async function Spares() {
   return (
     <>
       <Hero page="spares" data={cards.data[0].attributes.categoryId.data.attributes} />
+      <SkeletonContainer>
+        <CardSkeleton />
+      </SkeletonContainer>
       <Cards cards={cards} pathname="/spares" title="Запчасти и комплектующие" />
       <CallToAction />
     </>

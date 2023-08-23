@@ -12,6 +12,8 @@
   --link-hover: #e3e3e3;
   --input-background: var(--gray);
   --cta-bg-green: #b5d7d9;
+
+  --skeleton-element-gray: rgb(226, 224, 224);
 }
 
 * {
