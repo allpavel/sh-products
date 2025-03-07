@@ -1,4 +1,4 @@
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import ReactMarkdown from "react-markdown";
 import { Button } from "../Button/Button";
 import styles from "./Hero.module.css";
 
